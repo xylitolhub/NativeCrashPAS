@@ -1,0 +1,69 @@
+#!/usr/bin/env python
+
+"""stack symbolizes native crash dumps."""
+
+import getopt
+import os
+import sys
+
+import stack_core
+import symbol
+
+
+def PrintUsage():
+  """Print usage and exit with error."""
+  print
+  print "  usage: " + sys.argv[0] + " [options] [FILE]"
+  print
+  print "  --arch=arm|arm64|mips|mips64|x86|x86_64"
+  print "       the target architecture"
+  print
+  print "  --symbols=<path-of-symbols>"
+  print
+  print "  FILE should contain a stack trace in it somewhere"
+  print "       the tool will find that and re-print it with"
+  print "       source files and line numbers.  If you don't"
+  print "       pass FILE, or if file is -, it reads from"
+  print "       stdin."
+  print
+  sys.exit(1)
+
+
+def main():
+  try:
+    options, arguments = getopt.getopt(sys.argv[1:], "",
+                                       ["arch=",
+                                        "symbols=",
+                                        "help"])
+  except getopt.GetoptError, unused_error:
+    print
+    print "  INVALID ARGS!"
+    PrintUsage()
+
+  for option, value in options:
+    if option == "--help":
+      PrintUsage()
+    elif option == "--symbols":
+      symbol.SYMBOLS_DIR = value
+    elif option == "--arch":
+      symbol.ARCH = value
+
+  if len(arguments) > 1:
+    PrintUsage()
+
+  if not arguments or arguments[0] == "-":
+    print "Reading native crash info from stdin"
+    f = sys.stdin
+  else:
+    print "Searching for native crashes in %s" % arguments[0]
+    f = open(arguments[0], "r")
+
+  lines = f.readlines()
+  f.close()
+
+  stack_core.ConvertTrace(lines)
+
+if __name__ == "__main__":
+  main()
+
+# vi: ts=2 sw=2
