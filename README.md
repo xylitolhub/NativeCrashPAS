@@ -1,2 +1,1 @@
-# NativeCrashPAS
-# NativeCrashPAS is Native Crash Python Analyze Script
+NativeCrashPAS is Native Crash Python Analyze Script.

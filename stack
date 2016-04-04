@@ -31,12 +31,12 @@ def PrintUsage():
 
 def main():
   try:
-    options, arguments = getopt.getopt(sys.argv[1:], "",
+    options, arguments = getopt.getopt(sys.argv[1:], "a:",
                                        ["arch=",
                                         "symbols=",
+                                        "oat-from-device",
                                         "help"])
   except getopt.GetoptError, unused_error:
-    print
     print "  INVALID ARGS!"
     PrintUsage()
 
@@ -47,6 +47,8 @@ def main():
       symbol.SYMBOLS_DIR = value
     elif option == "--arch":
       symbol.ARCH = value
+    elif option == "--oat-from-device":
+      print "analyze oat from connected device"
 
   if len(arguments) > 1:
     PrintUsage()
