@@ -1,0 +1,1957 @@
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'Xiaomi/cancro/cancro:4.4.4/KTU84P/eng.xl.20160315.105107:userdebug/test-keys'
+Revision: '0'
+pid: 25276, tid: 25276, name: com.xl.andesy  >>> com.xl.andesy <<<
+signal 6 (SIGABRT), code -6 (SI_TKILL), fault addr --------
+    r0 0000003e  r1 423be601  r2 0000103f  r3 423bd640
+    r4 ac60001d  r5 416152f0  r6 00000fc1  r7 00000003
+    r8 0000003e  r9 6d599bd0  sl 41615930  fp bef0927c
+    ip 0000103f  sp bef09238  lr 70440ed1  pc 4004f440  cpsr 000d0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  0000000000000000  d5  0000000000000000
+    d6  3f13cd3600000000  d7  4040000000000003
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 006c006100640020  d17 0076006b00690076
+    d18 00570020003a006d  d19 00650074006f0072
+    d20 0061007400730020  d21 00740020006b0063
+    d22 0065006300610072  d23 006f007400200073
+    d24 b94377ce858a5d48  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 80000010
+
+backtrace:
+    #00  pc 00020440  /system/lib/libc.so (read+8)
+    #01  pc 0001cecd  /system/lib/libjavacore.so
+    #02  pc 0002034c  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+    #03  pc 00050fcf  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+398)
+    #04  pc 000297e0  /system/lib/libdvm.so
+    #05  pc 00030c6c  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+    #06  pc 0002e304  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+    #07  pc 00063715  /system/lib/libdvm.so (dvmInvokeMethod(Object*, Method const*, ArrayObject*, ArrayObject*, ClassObject*, bool)+392)
+    #08  pc 0006b627  /system/lib/libdvm.so
+    #09  pc 000297e0  /system/lib/libdvm.so
+    #10  pc 00030c6c  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+    #11  pc 0002e304  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+    #12  pc 00063431  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+336)
+    #13  pc 0004cbb7  /system/lib/libdvm.so
+    #14  pc 0004e023  /system/lib/libandroid_runtime.so
+    #15  pc 0004ed47  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+354)
+    #16  pc 0000105b  /system/bin/app_process
+    #17  pc 0000e4c3  /system/lib/libc.so (__libc_init+50)
+    #18  pc 00000d7c  /system/bin/app_process
+
+stack:
+         bef091f8  416d053c  /system/lib/libdvm.so
+         bef091fc  00000000  
+         bef09200  416d0801  /system/lib/libdvm.so
+         bef09204  00000000  
+         bef09208  416152f0  
+         bef0920c  4021b004  /system/lib/libnativehelper.so
+         bef09210  4021af88  /system/lib/libnativehelper.so
+         bef09214  ac60001d  
+         bef09218  bef09268  [stack]
+         bef0921c  40217daf  /system/lib/libnativehelper.so (jniGetFDFromFileDescriptor+82)
+         bef09220  423bd640  /dev/ashmem/dalvik-heap (deleted)
+         bef09224  ac60001d  
+         bef09228  416152f0  
+         bef0922c  00000fc1  
+         bef09230  0000103f  
+         bef09234  70440ec3  /system/lib/libjavacore.so
+    #00  bef09238  416152f0  
+         ........  ........
+    #01  bef09238  416152f0  
+         bef0923c  77500021  
+         bef09240  77500021  
+         bef09244  423bd640  /dev/ashmem/dalvik-heap (deleted)
+         bef09248  6d5cb590  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef0924c  41615920  
+         bef09250  00000004  
+         bef09254  6d599be0  
+         bef09258  bef09268  [stack]
+         bef0925c  41638350  /system/lib/libdvm.so (dvmPlatformInvoke+116)
+    #02  bef09260  00000fc1  
+         bef09264  0000103f  
+         bef09268  6d599bcc  
+         bef0926c  00000001  
+         bef09270  6e771a9b  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         bef09274  416fc598  /dev/ashmem/dalvik-zygote (deleted)
+         bef09278  421b95f4  /dev/ashmem/dalvik-heap (deleted)
+         bef0927c  41668fd3  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+402)
+    #03  bef09280  6d599bcc  
+         bef09284  6e771a96  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         bef09288  70440ea1  /system/lib/libjavacore.so
+         bef0928c  41615930  
+         bef09290  416dbe18  /system/lib/libdvm.so
+         bef09294  6d599ce8  
+         bef09298  00000000  
+         bef0929c  00000000  
+         bef092a0  ffffffff  
+         bef092a4  4007d394  
+         bef092a8  00000000  
+         bef092ac  0000000c  
+         bef092b0  0000000c  
+         bef092b4  421ab008  /dev/ashmem/dalvik-heap (deleted)
+         bef092b8  00000001  
+         bef092bc  0000000c  
+         ........  ........
+    #04  bef09398  00000923  
+         bef0939c  41615920  
+         bef093a0  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         bef093a4  00000000  
+         bef093a8  bef09488  [stack]
+         bef093ac  41615920  
+         bef093b0  bef093ec  [stack]
+         bef093b4  6d681738  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef093b8  421b95f4  /dev/ashmem/dalvik-heap (deleted)
+         bef093bc  41648c70  /system/lib/libdvm.so (dvmMterpStd(Thread*)+80)
+    #05  bef093c0  2f617661  
+         bef093c4  676e616c  /dev/ashmem/dalvik-mark-stack (deleted)
+         bef093c8  7274532f  /data/system/theme/fonts/Roboto-Regular.ttf
+         bef093cc  3b676e69  
+         bef093d0  41005629  /system/lib/libLLVM.so (llvm::DwarfDebug::getLabelBeforeInsn(llvm::MachineInstr const*)+4)
+         bef093d4  fffffe58  
+         bef093d8  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         bef093dc  41646308  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+188)
+    #06  bef093e0  00000050  
+         bef093e4  421ab008  /dev/ashmem/dalvik-heap (deleted)
+         bef093e8  00000000  
+         bef093ec  6f707f38  /data/dalvik-cache/system@framework@framework2.jar@classes.dex
+         bef093f0  6d599ec4  
+         bef093f4  6d5ab6d0  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef093f8  6e8bc000  /dev/ashmem/dalvik-aux-structure (deleted)
+         bef093fc  421b9560  /dev/ashmem/dalvik-heap (deleted)
+         bef09400  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         bef09404  bef09520  [stack]
+         bef09408  00000000  
+         bef0940c  bef09574  [stack]
+         bef09410  00000000  
+         bef09414  00000000  
+         bef09418  00000000  
+         bef0941c  00000000  
+         ........  ........
+    #07  bef09470  00000000  
+         bef09474  00000000  
+         bef09478  6d599ed4  
+         bef0947c  4007d394  
+         bef09480  00000000  
+         bef09484  00000000  
+         bef09488  00000000  
+         bef0948c  00000000  
+         bef09490  00000000  
+         bef09494  00000000  
+         bef09498  00000000  
+         bef0949c  00000000  
+         bef094a0  00000000  
+         bef094a4  00000000  
+         bef094a8  00000000  
+         bef094ac  00000000  
+         ........  ........
+    #08  bef094f0  416e52a8  /dev/ashmem/dalvik-zygote (deleted)
+         bef094f4  00000000  
+         bef094f8  6d5ab230  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef094fc  6e65281a  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         bef09500  6d599f34  
+         bef09504  41615920  
+         bef09508  416e9470  /dev/ashmem/dalvik-zygote (deleted)
+         bef0950c  416384c0  /system/lib/libdvm.so
+         bef09510  00000006  
+         bef09514  6d599eec  
+         bef09518  bef09678  [stack]
+         bef0951c  416417e4  /system/lib/libdvm.so
+    #09  bef09520  417499e0  /dev/ashmem/dalvik-zygote (deleted)
+         bef09524  41615920  
+         bef09528  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         bef0952c  00000000  
+         bef09530  bef09648  [stack]
+         bef09534  41615920  
+         bef09538  bef09574  [stack]
+         bef0953c  6d674930  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef09540  bef09678  [stack]
+         bef09544  41648c70  /system/lib/libdvm.so (dvmMterpStd(Thread*)+80)
+    #10  bef09548  00000000  
+         bef0954c  6d6b35b0  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef09550  00000000  
+         bef09554  41678585  /system/lib/libdvm.so (dvmOptResolveInstField(ClassObject*, unsigned int, VerifyError*)+196)
+         bef09558  6f80e64c  /data/dalvik-cache/system@framework@framework2.jar@classes.dex
+         bef0955c  fffffe58  
+         bef09560  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         bef09564  41646308  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+188)
+    #11  bef09568  41749ba0  /dev/ashmem/dalvik-zygote (deleted)
+         bef0956c  000001c0  
+         bef09570  41615c8c  
+         bef09574  00000000  
+         bef09578  6d599fa8  
+         bef0957c  00000000  
+         bef09580  00000000  
+         bef09584  00000000  
+         bef09588  00000000  
+         bef0958c  00000000  
+         bef09590  00000000  
+         bef09594  00000000  
+         bef09598  00000000  
+         bef0959c  00000000  
+         bef095a0  00000000  
+         bef095a4  00000000  
+         ........  ........
+    #12  bef095f8  bef095c0  [stack]
+         bef095fc  0000001d  
+         bef09600  6d674944  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef09604  6f763060  /data/dalvik-cache/system@framework@framework2.jar@classes.dex
+         bef09608  00000001  
+         bef0960c  00000001  
+         bef09610  416ddd00  
+         bef09614  6d674930  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef09618  bef09674  [stack]
+         bef0961c  1df00009  
+         bef09620  1d500015  
+         bef09624  00000004  
+         bef09628  bef09949  [stack]
+         bef0962c  00000000  
+         bef09630  bef09928  [stack]
+         bef09634  41664bbb  /system/lib/libdvm.so
+    #13  bef09638  bef09648  [stack]
+         bef0963c  bef09674  [stack]
+         bef09640  6d674930  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef09644  41615920  
+         bef09648  416fe4a8  /dev/ashmem/dalvik-zygote (deleted)
+         bef0964c  416643d9  /system/lib/libdvm.so
+         bef09650  1d500015  
+         bef09654  41664b99  /system/lib/libdvm.so
+         bef09658  719855d0  
+         bef0965c  40155025  /system/lib/libandroid_runtime.so
+    #14  bef09660  416152f0  
+         bef09664  bef09674  [stack]
+         bef09668  400113ac  /system/bin/app_process
+         bef0966c  40155d4b  /system/lib/libandroid_runtime.so (android::AndroidRuntime::start(char const*, char const*)+358)
+         bef09670  6d674930  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         bef09674  1df00009  
+    #15  bef09678  416152f0  
+         bef0967c  00000000  
+         bef09680  40c7adb4  
+         bef09684  41668939  /system/lib/libdvm.so (JNI_GetDefaultJavaVMInitArgs)
+         bef09688  41668969  /system/lib/libdvm.so (JNI_CreateJavaVM)
+         bef0968c  41668941  /system/lib/libdvm.so (JNI_GetCreatedJavaVMs)
+         bef09690  000000bb  
+         bef09694  00000000  
+         bef09698  41615190  
+         bef0969c  4003ffe3  /system/lib/libc.so (dlmalloc+4254)
+         bef096a0  00000000  
+         bef096a4  bef0972c  [stack]
+         bef096a8  00000000  
+         bef096ac  400c7885  /system/lib/libutils.so (android::VectorImpl::_grow(unsigned int, unsigned int)+152)
+         bef096b0  00000000  
+         bef096b4  400c74eb  /system/lib/libutils.so (android::VectorImpl::itemLocation(unsigned int) const+10)
+         ........  ........
+    #16  bef09700  00000001  
+         bef09704  00000001  
+         bef09708  00000000  
+         bef0970c  bef09824  [stack]
+         bef09710  4007d394  
+         bef09714  40011372  /system/bin/app_process
+         bef09718  40011300  /system/bin/app_process
+         bef0971c  4001137b  /system/bin/app_process
+         bef09720  40011391  /system/bin/app_process
+         bef09724  4001139f  /system/bin/app_process
+         bef09728  40012e08  /system/bin/app_process
+         bef0972c  401b14d0  /system/lib/libandroid_runtime.so
+         bef09730  416151a0  
+         bef09734  00000012  
+         bef09738  00000000  
+         bef0973c  00000008  
+         ........  ........
+    #17  bef097e0  00000000  
+         bef097e4  00000000  
+         bef097e8  00000000  
+         bef097ec  00000000  
+         bef097f0  00000000  
+         bef097f4  40010d80  /system/bin/app_process
+    #18  bef097f8  40012de8  /system/bin/app_process
+         bef097fc  40012df0  /system/bin/app_process
+         bef09800  40012df8  /system/bin/app_process
+         bef09804  bef09810  [stack]
+         bef09808  00000000  
+         bef0980c  40015881  /system/bin/linker
+         bef09810  00000005  
+         bef09814  bef09928  [stack]
+         bef09818  bef09940  [stack]
+         bef0981c  bef09949  [stack]
+         bef09820  bef09955  [stack]
+         bef09824  bef0995e  [stack]
+         bef09828  00000000  
+         bef0982c  bef09974  [stack]
+         bef09830  bef099b8  [stack]
+         bef09834  bef099fa  [stack]
+
+memory near r1:
+    423be5e0 63617274 74207365 2f27206f 61746164  
+    423be5f0 726e612f 6172742f 2e736563 27747874  
+    423be600 52203a0a 746f6d65 72422065 68636e61  
+    423be610 7571203a 4c2f6369 4c2e584e 2e332e41  
+    423be620 2e322e35 5f312e32 0a316272 312d3330  
+    423be630 30302037 3a39333a 322e3635 32203231  
+    423be640 39373630 36303220 49203937 72644120  
+    423be650 2d6f6e65 3a4c4745 636f4c20 50206c61  
+    423be660 68637461 203a7365 454e4f4e 2d33300a  
+    423be670 30203731 39333a30 2e36353a 20323132  
+    423be680 37363032 30322039 20393736 64412049  
+    423be690 6f6e6572 4c47452d 6552203a 736e6f63  
+    423be6a0 63757274 72422074 68636e61 5541203a  
+    423be6b0 4e494c5f 415f5855 4f52444e 4c5f4449  
+    423be6c0 4c2e584e 2e332e41 2e322e35 5f312e32  
+    423be6d0 2e314252 302e3430 34302e34 3039302e  
+
+memory near r2:
+    0000101c ffffffff ffffffff ffffffff ffffffff  
+    0000102c ffffffff ffffffff ffffffff ffffffff  
+    0000103c ffffffff ffffffff ffffffff ffffffff  
+    0000104c ffffffff ffffffff ffffffff ffffffff  
+    0000105c ffffffff ffffffff ffffffff ffffffff  
+    0000106c ffffffff ffffffff ffffffff ffffffff  
+    0000107c ffffffff ffffffff ffffffff ffffffff  
+    0000108c ffffffff ffffffff ffffffff ffffffff  
+    0000109c ffffffff ffffffff ffffffff ffffffff  
+    000010ac ffffffff ffffffff ffffffff ffffffff  
+    000010bc ffffffff ffffffff ffffffff ffffffff  
+    000010cc ffffffff ffffffff ffffffff ffffffff  
+    000010dc ffffffff ffffffff ffffffff ffffffff  
+    000010ec ffffffff ffffffff ffffffff ffffffff  
+    000010fc ffffffff ffffffff ffffffff ffffffff  
+    0000110c ffffffff ffffffff ffffffff ffffffff  
+
+memory near r3:
+    423bd620 00000000 00000000 00000000 0000201b  
+    423bd630 416e6800 00000000 00002000 00000000  
+    423bd640 76697463 5f797469 656c6469 3a646920  
+    423bd650 646e6120 64696f72 2e736f2e 646e6942  
+    423bd660 72507265 4079786f 62313234 30336263  
+    423bd670 6d697420 31343a65 36333538 300a3932  
+    423bd680 37312d33 3a303020 313a3534 38392e34  
+    423bd690 34322032 20363830 38303432 20442036  
+    423bd6a0 766c6164 6d766b69 614c203a 652d6574  
+    423bd6b0 6c62616e 20676e69 63656843 494e4a6b  
+    423bd6c0 2d33300a 30203731 35343a30 2e35313a  
+    423bd6d0 20323131 38303432 34322036 20363830  
+    423bd6e0 6e412044 79736564 203a2020 63206e6f  
+    423bd6f0 74616572 33300a65 2037312d 343a3030  
+    423bd700 35313a35 3239312e 30343220 32203638  
+    423bd710 36383034 41204920 6e657264 47452d6f  
+
+memory near r4:
+    ac5ffffc ffffffff ffffffff ffffffff ffffffff  
+    ac60000c ffffffff ffffffff ffffffff ffffffff  
+    ac60001c ffffffff ffffffff ffffffff ffffffff  
+    ac60002c ffffffff ffffffff ffffffff ffffffff  
+    ac60003c ffffffff ffffffff ffffffff ffffffff  
+    ac60004c ffffffff ffffffff ffffffff ffffffff  
+    ac60005c ffffffff ffffffff ffffffff ffffffff  
+    ac60006c ffffffff ffffffff ffffffff ffffffff  
+    ac60007c ffffffff ffffffff ffffffff ffffffff  
+    ac60008c ffffffff ffffffff ffffffff ffffffff  
+    ac60009c ffffffff ffffffff ffffffff ffffffff  
+    ac6000ac ffffffff ffffffff ffffffff ffffffff  
+    ac6000bc ffffffff ffffffff ffffffff ffffffff  
+    ac6000cc ffffffff ffffffff ffffffff ffffffff  
+    ac6000dc ffffffff ffffffff ffffffff ffffffff  
+    ac6000ec ffffffff ffffffff ffffffff ffffffff  
+
+memory near r5:
+    416152d0 00120184 09200014 0924f931 30310909  
+    416152e0 0a11080b 0a0a0a04 00000033 00000023  
+    416152f0 416d2f74 416d33e8 00000001 41615920  
+    41615300 00000000 719a6958 00000000 00000013  
+    41615310 0000002e 00000000 00000000 000003c3  
+    41615320 7379732f 2f6d6574 6d617266 726f7765  
+    41615330 6f632f6b 6a2e6572 2f3a7261 74737973  
+    41615340 662f6d65 656d6172 6b726f77 6e6f632f  
+    41615350 79726373 6a2e7470 2f3a7261 74737973  
+    41615360 662f6d65 656d6172 6b726f77 686b6f2f  
+    41615370 2e707474 3a72616a 7379732f 2f6d6574  
+    41615380 6d617266 726f7765 6f632f6b 6a2d6572  
+    41615390 74696e75 72616a2e 79732f3a 6d657473  
+    416153a0 6172662f 6f77656d 622f6b72 636e756f  
+    416153b0 73616379 2e656c74 3a72616a 7379732f  
+    416153c0 2f6d6574 6d617266 726f7765 78652f6b  
+
+memory near r9:
+    6d599bb0 6d6b5b70 00000000 6d599bf4 6e711d70  
+    6d599bc0 6d5cb590 00000006 00000000 6b200019  
+    6d599bd0 ac60001d 77500021 00000fc1 0000103f  
+    6d599be0 6d599c20 6e70d93e 6d5cc590 6e711d70  
+    6d599bf0 00000000 6d5fe6c0 416fc598 423bbf88  
+    6d599c00 423bd630 00000fc1 0000103f 6d599c4c  
+    6d599c10 6e70ec8c 6d5df1f0 6e70d93e 00000000  
+    6d599c20 416fc598 416fc588 423bbf88 423bd630  
+    6d599c30 00000fc1 0000103f 6d599c80 6e62e464  
+    6d599c40 6d6bb430 6e70ec8c 00000000 6d599c8c  
+    6d599c50 00000000 416fc588 6e70e242 423bbf88  
+    6d599c60 423bd630 00000fc1 0000103f 6d599ca8  
+    6d599c70 6e62ec78 6d5dcfe8 6e62e464 00000000  
+    6d599c80 423bbf88 423bc2f0 423bd630 00000fc1  
+    6d599c90 0000103f 6d599cf8 6e629420 6d6b47c8  
+    6d599ca0 6e62ec78 00000000 6d5ccde0 0000103f  
+
+memory near sl:
+    41615910 00000000 00000800 6d591008 0000045b  
+    41615920 6e6298ee 6d599bcc 6d5cc590 6e8bc000  
+    41615930 421c7dc0 416152f0 bef09398 00000000  
+    41615940 bef093ec 00000001 00000000 416384c0  
+    41615950 00000000 00000000 6c962370 6d594300  
+    41615960 00000000 00000000 00000001 00006000  
+    41615970 00000000 40025154 416384c0 4163d400  
+    41615980 00000000 416414fc 41641570 41641420  
+    41615990 41641440 4164149c 00000000 00000000  
+    416159a0 76d08828 00000028 00000000 00000000  
+    416159b0 00000000 00000006 00002000 416dc54c  
+    416159c0 00000000 00000000 00000009 700ea300  
+    416159d0 00000001 00000100 00000200 00000001  
+    416159e0 00000004 6e62993c 6e6298ee 00000004  
+    416159f0 6e6298fa 6d6b4080 00000000 00000000  
+    41615a00 00000000 00000000 d0204c77 00000000  
+
+memory near fp:
+    bef0925c 41638350 00000fc1 0000103f 6d599bcc  
+    bef0926c 00000001 6e771a9b 416fc598 421b95f4  
+    bef0927c 41668fd3 6d599bcc 6e771a96 70440ea1  
+    bef0928c 41615930 416dbe18 6d599ce8 00000000  
+    bef0929c 00000000 ffffffff 4007d394 00000000  
+    bef092ac 0000000c 0000000c 421ab008 00000001  
+    bef092bc 0000000c 416dbe18 6e8d45f4 421b95f4  
+    bef092cc 423e0448 ffffffff 423e0448 41615828  
+    bef092dc 4168e089 416d5c38 416d5c38 4007d394  
+    bef092ec 0000000c 416dbe18 4007d394 0000000c  
+    bef092fc 4164498c 00000000 00000000 00000000  
+    bef0930c 00000000 00000000 00000000 00000000  
+    bef0931c 00000000 00000000 00000000 00000000  
+    bef0932c 00000000 00000000 00000000 00000000  
+    bef0933c 00000000 00000000 00000000 00000000  
+    bef0934c 00000000 00000000 00000000 00000000  
+
+memory near ip:
+    0000101c ffffffff ffffffff ffffffff ffffffff  
+    0000102c ffffffff ffffffff ffffffff ffffffff  
+    0000103c ffffffff ffffffff ffffffff ffffffff  
+    0000104c ffffffff ffffffff ffffffff ffffffff  
+    0000105c ffffffff ffffffff ffffffff ffffffff  
+    0000106c ffffffff ffffffff ffffffff ffffffff  
+    0000107c ffffffff ffffffff ffffffff ffffffff  
+    0000108c ffffffff ffffffff ffffffff ffffffff  
+    0000109c ffffffff ffffffff ffffffff ffffffff  
+    000010ac ffffffff ffffffff ffffffff ffffffff  
+    000010bc ffffffff ffffffff ffffffff ffffffff  
+    000010cc ffffffff ffffffff ffffffff ffffffff  
+    000010dc ffffffff ffffffff ffffffff ffffffff  
+    000010ec ffffffff ffffffff ffffffff ffffffff  
+    000010fc ffffffff ffffffff ffffffff ffffffff  
+    0000110c ffffffff ffffffff ffffffff ffffffff  
+
+memory near sp:
+    bef09218 bef09268 40217daf 423bd640 ac60001d  
+    bef09228 416152f0 00000fc1 0000103f 70440ec3  
+    bef09238 416152f0 77500021 77500021 423bd640  
+    bef09248 6d5cb590 41615920 00000004 6d599be0  
+    bef09258 bef09268 41638350 00000fc1 0000103f  
+    bef09268 6d599bcc 00000001 6e771a9b 416fc598  
+    bef09278 421b95f4 41668fd3 6d599bcc 6e771a96  
+    bef09288 70440ea1 41615930 416dbe18 6d599ce8  
+    bef09298 00000000 00000000 ffffffff 4007d394  
+    bef092a8 00000000 0000000c 0000000c 421ab008  
+    bef092b8 00000001 0000000c 416dbe18 6e8d45f4  
+    bef092c8 421b95f4 423e0448 ffffffff 423e0448  
+    bef092d8 41615828 4168e089 416d5c38 416d5c38  
+    bef092e8 4007d394 0000000c 416dbe18 4007d394  
+    bef092f8 0000000c 4164498c 00000000 00000000  
+    bef09308 00000000 00000000 00000000 00000000  
+
+code around pc:
+    4004f420 ef000000 e1a0700c e3700a01 912fff1e  
+    4004f430 e2600000 ea007533 e1a0c007 e3a07003  
+    4004f440 ef000000 e1a0700c e3700a01 912fff1e  
+    4004f450 e2600000 ea00752b e1a0c007 e3a07004  
+    4004f460 ef000000 e1a0700c e3700a01 912fff1e  
+    4004f470 e2600000 ea007523 e1a0c00d e92d00f0  
+    4004f480 e89c0070 e3a070b4 ef000000 e8bd00f0  
+    4004f490 e3700a01 912fff1e e2600000 ea007519  
+    4004f4a0 e1a0c00d e92d00f0 e89c0070 e3a070b5  
+    4004f4b0 ef000000 e8bd00f0 e3700a01 912fff1e  
+    4004f4c0 e2600000 ea00750f e1a0c007 e3a07005  
+    4004f4d0 ef000000 e1a0700c e3700a01 912fff1e  
+    4004f4e0 e2600000 ea007507 e1a0c007 e59f7014  
+    4004f4f0 ef000000 e1a0700c e3700a01 912fff1e  
+    4004f500 e2600000 ea0074ff 00000142 e1a0c007  
+    4004f510 e3a07006 ef000000 e1a0700c e3700a01  
+
+code around lr:
+    70440eb0 f7fc9f0b 9b03fa8b 4628b19b f7fe4621  
+    70440ec0 4680fe52 46409903 1989463a ed4ef7ef  
+    70440ed0 30014604 f7efd10d 6800eae0 d1032804  
+    70440ee0 f04fe7f0 e00434ff 46284905 f7fe4479  
+    70440ef0 4668ff2f faa1f7fc b0044620 81f0e8bd  
+    70440f00 00010d35 47f0e92d b0864681 a8024690  
+    70440f10 4649461a 9f0f9e0e 4510e9dd fa56f7fc  
+    70440f20 b1b39b05 46414648 fe1df7fe 99054682  
+    70440f30 e9cd4650 463a4500 f7f01989 f1b0ec32  
+    70440f40 46803fff f7efd10d 6800eaa8 d1032804  
+    70440f50 f04fe7ed e00438ff 46484905 f7fe4479  
+    70440f60 a802fef7 fa5ef7fc b0064640 87f0e8bd  
+    70440f70 00010cca 47f0e92d b0864681 a8024690  
+    70440f80 4649461a 9f0f9e0e 4510e9dd fa1ef7fc  
+    70440f90 b1b39b05 46414648 fde5f7fe 99054682  
+    70440fa0 e9cd4650 463a4500 f7f01989 f1b0ec00  
+--------- tail end of log /dev/log/main
+03-17 00:46:50.072 25276 25296 D dalvikvm: Debugger has detached; object registry had 1 entries
+03-17 00:46:50.202 25276 25276 D Andesy  : on create
+03-17 00:50:10.122 25276 25295 I dalvikvm: threadid=3: reacting to signal 3
+03-17 00:50:10.162 25276 25295 I dalvikvm: Wrote stack traces to '/data/anr/traces.txt'
+03-17 00:50:14.452 25276 25276 F libc    : Fatal signal 6 (SIGABRT) at 0x00000479 (code=0), thread 25276 (com.xl.andesy)
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25284, name: GC
+    r0 416158dc  r1 00000080  r2 00000000  r3 00000000
+    r4 416158dc  r5 416158d8  r6 00000000  r7 000000f0
+    r8 416ddd30  r9 416ddd30  sl 416158d0  fp 4007b2ec
+    ip 00000000  sp 7177cd40  lr 4003e040  pc 40050a80  cpsr 600b0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  761a3549761a6165  d5  761a61a9761a37c9
+    d6  3e4ccccd00803000  d7  42c800004b2c43e0
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 616e652d6574614c  d17 684320676e696c62
+    d18 657361656c65723d  d19 3d6e69616d6f6420
+    d20 5f657361656c6572  d21 6570797420707061
+    d22 726f6674616c703d  d23 61645f7070615f6d
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 20000010
+
+backtrace:
+    #00  pc 00021a80  /system/lib/libc.so (__futex_syscall3+8)
+    #01  pc 0000f03c  /system/lib/libc.so (__pthread_cond_timedwait_relative+48)
+    #02  pc 0000f09c  /system/lib/libc.so (__pthread_cond_timedwait+64)
+    #03  pc 0007561b  /system/lib/libdvm.so
+    #04  pc 00057815  /system/lib/libdvm.so
+    #05  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #06  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         7177cd00  00000000  
+         7177cd04  7177cca8  [stack:25284]
+         7177cd08  7177ccb4  [stack:25284]
+         7177cd0c  00000018  
+         7177cd10  6d5a466c  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         7177cd14  7177cd68  [stack:25284]
+         7177cd18  416dbe18  /system/lib/libdvm.so
+         7177cd1c  421b4520  /dev/ashmem/dalvik-heap (deleted)
+         7177cd20  421b44b0  /dev/ashmem/dalvik-heap (deleted)
+         7177cd24  421b4508  /dev/ashmem/dalvik-heap (deleted)
+         7177cd28  00000001  
+         7177cd2c  416f4a30  /dev/ashmem/dalvik-zygote (deleted)
+         7177cd30  416158dc  
+         7177cd34  416158d8  
+         7177cd38  00000000  
+         7177cd3c  4003e028  /system/lib/libc.so (__pthread_cond_timedwait_relative+28)
+    #00  7177cd40  00000000  
+         ........  ........
+    #01  7177cd40  00000000  
+         7177cd44  416158d8  
+         7177cd48  416158dc  
+         7177cd4c  00000000  
+         7177cd50  416ddd30  
+         7177cd54  4003e0a0  /system/lib/libc.so (__pthread_cond_timedwait+68)
+    #02  7177cd58  416d5c38  /system/lib/libdvm.so
+         7177cd5c  416dbe18  /system/lib/libdvm.so
+         7177cd60  bef09348  [stack]
+         7177cd64  416d5c38  /system/lib/libdvm.so
+         7177cd68  416dbe18  /system/lib/libdvm.so
+         7177cd6c  4168d61f  /system/lib/libdvm.so
+    #03  7177cd70  00000000  
+         7177cd74  00000081  
+         7177cd78  4168d5d1  /system/lib/libdvm.so
+         7177cd7c  719a6730  
+         7177cd80  416dbe18  /system/lib/libdvm.so
+         7177cd84  bef09348  [stack]
+         7177cd88  719a6730  
+         7177cd8c  4166f7c9  /system/lib/libdvm.so
+         7177cd90  7167f000  
+         7177cd94  4166f817  /system/lib/libdvm.so
+    #04  7177cd98  719a6730  
+         7177cd9c  00010002  
+         7177cda0  7611e2c8  
+         7177cda4  416f4a30  /dev/ashmem/dalvik-zygote (deleted)
+         7177cda8  7177cdd0  [stack:25284]
+         7177cdac  719a6240  
+         7177cdb0  4166f7c9  /system/lib/libdvm.so
+         7177cdb4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #05  7177cdb8  719a6730  
+         7177cdbc  719a6240  
+         7177cdc0  7177cdd0  [stack:25284]
+         7177cdc4  00000000  
+         7177cdc8  00000078  
+         7177cdcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #06  7177cdd0  7177cdd0  [stack:25284]
+         7177cdd4  719a6240  
+         7177cdd8  00000000  
+         7177cddc  00000000  
+         7177cde0  00000000  
+         7177cde4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         7177cde8  00000000  
+         7177cdec  00000000  
+         7177cdf0  00000000  
+         7177cdf4  00000000  
+         7177cdf8  00000000  
+         7177cdfc  00000000  
+         7177ce00  00000000  
+         7177ce04  00000000  
+         7177ce08  00000000  
+         7177ce0c  7611e670  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25295, name: Signal Catcher
+    r0 fffffffc  r1 00000000  r2 00000000  r3 00000008
+    r4 7187ad08  r5 7187ad48  r6 00000041  r7 000000b1
+    r8 719a9640  r9 416d5c38  sl 00000001  fp 416b84d4
+    ip 7187ad44  sp 7187ad08  lr 400424d5  pc 400502ec  cpsr 200f0010
+    d0  6f6874654d206576  d1  224347220a0a2964
+    d2  206e6f6d65616420  d3  7420353d6f697270
+    d4  574d5620323d6469  d5  207c20200a544941
+    d6  73223d70756f7267  d7  7320226d65747379
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 6e612f617461642f  d17 7365636172742f72
+    d18 2e6b69766c616420  d19 4e2e6d6574737973
+    d20 6174536576697461  d21 4e286e75722e7472
+    d22 654d206576697461  d23 2d0a0a29646f6874
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 20000010
+
+backtrace:
+    #00  pc 000212ec  /system/lib/libc.so (__rt_sigtimedwait+12)
+    #01  pc 000134d1  /system/lib/libc.so (sigwait+24)
+    #02  pc 00054dfb  /system/lib/libdvm.so
+    #03  pc 00057815  /system/lib/libdvm.so
+    #04  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #05  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         7187acc8  416bf726  /system/lib/libdvm.so
+         7187accc  4166fa69  /system/lib/libdvm.so
+         7187acd0  76d08498  
+         7187acd4  7611e670  
+         7187acd8  7611e698  
+         7187acdc  ffffffef  
+         7187ace0  7611e698  
+         7187ace4  00000001  
+         7187ace8  76fa8df8  
+         7187acec  00002b15  
+         7187acf0  00000041  
+         7187acf4  76fa8e00  
+         7187acf8  719a9640  
+         7187acfc  400403cf  /system/lib/libc.so (dlfree+50)
+         7187ad00  40079000  /system/lib/libc.so
+         7187ad04  416dbe18  /system/lib/libdvm.so
+    #00  7187ad08  00000204  
+         ........  ........
+    #01  7187ad08  00000204  
+         7187ad0c  00000000  
+         7187ad10  fffffe58  
+         7187ad14  416dbe18  /system/lib/libdvm.so
+         7187ad18  00002b15  
+         7187ad1c  4166cdff  /system/lib/libdvm.so
+    #02  7187ad20  00000003  
+         7187ad24  00000011  
+         7187ad28  00000000  
+         7187ad2c  00000032  
+         7187ad30  0000000a  
+         7187ad34  4166c84b  /system/lib/libdvm.so (dvmRemoveFromReferenceTable(ReferenceTable*, Object**, Object*)+8)
+         7187ad38  719a9640  
+         7187ad3c  416707fb  /system/lib/libdvm.so (dvmReleaseTrackedAlloc+30)
+         7187ad40  421b4600  /dev/ashmem/dalvik-heap (deleted)
+         7187ad44  00000204  
+         7187ad48  00000003  
+         7187ad4c  76fa8e00  
+         7187ad50  00002b15  
+         7187ad54  56e98ec2  /dev/ashmem/dalvik-heap (deleted)
+         7187ad58  416f4a30  /dev/ashmem/dalvik-zygote (deleted)
+         7187ad5c  421b4600  /dev/ashmem/dalvik-heap (deleted)
+         ........  ........
+    #03  7187ad98  416e4b70  
+         7187ad9c  00010002  
+         7187ada0  719856e8  
+         7187ada4  416f4a30  /dev/ashmem/dalvik-zygote (deleted)
+         7187ada8  7187add0  [stack:25295]
+         7187adac  700e91b0  
+         7187adb0  4166f7c9  /system/lib/libdvm.so
+         7187adb4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #04  7187adb8  416e4b70  
+         7187adbc  700e91b0  
+         7187adc0  7187add0  [stack:25295]
+         7187adc4  00000000  
+         7187adc8  00000078  
+         7187adcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #05  7187add0  7187add0  [stack:25295]
+         7187add4  700e91b0  
+         7187add8  00000016  
+         7187addc  00000000  
+         7187ade0  00000000  
+         7187ade4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         7187ade8  00000000  
+         7187adec  00000000  
+         7187adf0  00000000  
+         7187adf4  00000000  
+         7187adf8  00000000  
+         7187adfc  00000000  
+         7187ae00  00000000  
+         7187ae04  00000000  
+         7187ae08  00000000  
+         7187ae0c  719a9640  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25296, name: JDWP
+    r0 00000040  r1 71978cd0  r2 00000000  r3 00000000
+    r4 00000000  r5 00000000  r6 719a9b97  r7 0000008e
+    r8 416c30ff  r9 416c2fb6  sl 416e426c  fp 4007b2ec
+    ip 71978cb0  sp 71978ca0  lr 4167c343  pc 4004f850  cpsr 000b0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  761a3549761a6165  d5  761a61a9761a37c9
+    d6  3e4ccccd00803000  d7  42c800004b2c43e0
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 0000000100390001  d17 00000001002f0101
+    d18 2d00770065006900  d19 7200650069006800
+    d20 6800630072006100  d21 6f000e0000007900
+    d22 67006e0065007000  d23 720074002d006c00
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 20000010
+
+backtrace:
+    #00  pc 00020850  /system/lib/libc.so (select+16)
+    #01  pc 0006433f  /system/lib/libdvm.so
+    #02  pc 00066e91  /system/lib/libdvm.so
+    #03  pc 00057815  /system/lib/libdvm.so
+    #04  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #05  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         71978c60  000000c7  
+         71978c64  4167d9df  /system/lib/libdvm.so
+         71978c68  0000000b  
+         71978c6c  76d14308  
+         71978c70  76d14300  
+         71978c74  0000000b  
+         71978c78  76d07ff0  
+         71978c7c  0000000b  
+         71978c80  416e4218  
+         71978c84  76d07ff8  
+         71978c88  719a9b70  
+         71978c8c  400403cf  /system/lib/libc.so (dlfree+50)
+         71978c90  40079000  /system/lib/libc.so
+         71978c94  76d07ff8  
+         71978c98  76d07ff8  
+         71978c9c  0000000b  
+    #00  71978ca0  719a9b70  
+         71978ca4  0000003f  
+         71978ca8  416e4218  
+         71978cac  416c2fb6  /system/lib/libdvm.so
+    #01  71978cb0  00000000  
+         71978cb4  00000000  
+         71978cb8  719a9b97  
+         71978cbc  40001894  
+         71978cc0  719a9b97  
+         71978cc4  00000014  
+         71978cc8  40001894  
+         71978ccc  000001c7  
+         71978cd0  00000000  
+         71978cd4  80090000  
+         71978cd8  00000000  
+         71978cdc  00000000  
+         71978ce0  00000000  
+         71978ce4  00000000  
+         71978ce8  00000000  
+         71978cec  00000000  
+         ........  ........
+    #02  71978d78  00000000  
+         71978d7c  416e42d0  
+         71978d80  416dbe18  /system/lib/libdvm.so
+         71978d84  bef09338  [stack]
+         71978d88  416e42d0  
+         71978d8c  4166f7c9  /system/lib/libdvm.so
+         71978d90  7187b000  
+         71978d94  4166f817  /system/lib/libdvm.so
+    #03  71978d98  416e42d0  
+         71978d9c  00010002  
+         71978da0  416e42f0  
+         71978da4  416f4a30  /dev/ashmem/dalvik-zygote (deleted)
+         71978da8  71978dd0  [stack:25296]
+         71978dac  416e4300  
+         71978db0  4166f7c9  /system/lib/libdvm.so
+         71978db4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #04  71978db8  416e42d0  
+         71978dbc  416e4300  
+         71978dc0  71978dd0  [stack:25296]
+         71978dc4  00000000  
+         71978dc8  00000078  
+         71978dcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #05  71978dd0  71978dd0  [stack:25296]
+         71978dd4  416e4300  
+         71978dd8  00000000  
+         71978ddc  00000000  
+         71978de0  00000000  
+         71978de4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         71978de8  00000000  
+         71978dec  00000000  
+         71978df0  00000000  
+         71978df4  00000000  
+         71978df8  00000000  
+         71978dfc  00000000  
+         71978e00  00000000  
+         71978e04  00000000  
+         71978e08  00000000  
+         71978e0c  71979008  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25297, name: Compiler
+    r0 416dc334  r1 00000080  r2 ffffff80  r3 00000000
+    r4 416dc334  r5 416dc32c  r6 ffffff80  r7 000000f0
+    r8 4166f7c9  r9 762ef000  sl 416dc328  fp 4007b2ec
+    ip 00000000  sp 763ecc10  lr 4003e040  pc 40050a80  cpsr 60070010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  ffc3ffffffffffff  d5  0000000000000001
+    d6  0000000000000000  d7  0000000000000000
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 009600026d6b4080  d17 006f010200000001
+    d18 8000f8c5e01561eb  d19 de00e01061eb6068
+    d20 f8dfe0040060f8df  d21 004cf8dfe0010058
+    d22 4300e00047886ef1  d23 6e62994247806e70
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 20000010
+
+backtrace:
+    #00  pc 00021a80  /system/lib/libc.so (__futex_syscall3+8)
+    #01  pc 0000f03c  /system/lib/libc.so (__pthread_cond_timedwait_relative+48)
+    #02  pc 0000f09c  /system/lib/libc.so (__pthread_cond_timedwait+64)
+    #03  pc 00076c5b  /system/lib/libdvm.so
+    #04  pc 00057815  /system/lib/libdvm.so
+    #05  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #06  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         763ecbd0  76d0cd38  
+         763ecbd4  00000000  
+         763ecbd8  76d0ce40  
+         763ecbdc  76d0cd28  
+         763ecbe0  76d0d078  
+         763ecbe4  76d0d45c  
+         763ecbe8  00000000  
+         763ecbec  00000000  
+         763ecbf0  00000000  
+         763ecbf4  76d0f524  
+         763ecbf8  00000000  
+         763ecbfc  76d0d244  
+         763ecc00  416dc334  
+         763ecc04  416dc32c  
+         763ecc08  ffffff80  
+         763ecc0c  4003e028  /system/lib/libc.so (__pthread_cond_timedwait_relative+28)
+    #00  763ecc10  00000000  
+         ........  ........
+    #01  763ecc10  00000000  
+         763ecc14  416dc32c  
+         763ecc18  416dc334  
+         763ecc1c  76d08828  
+         763ecc20  00001000  
+         763ecc24  4003e0a0  /system/lib/libc.so (__pthread_cond_timedwait+68)
+    #02  763ecc28  416dc2f8  
+         763ecc2c  00000001  
+         763ecc30  00000000  
+         763ecc34  416dc2f8  
+         763ecc38  00000001  
+         763ecc3c  4168ec5f  /system/lib/libdvm.so
+    #03  763ecc40  0000000a  
+         763ecc44  41648c70  /system/lib/libdvm.so (dvmMterpStd(Thread*)+80)
+         763ecc48  421b4800  /dev/ashmem/dalvik-heap (deleted)
+         763ecc4c  416d5c38  /system/lib/libdvm.so
+         763ecc50  416c9170  /system/lib/libdvm.so
+         763ecc54  416b84d4  /system/lib/libdvm.so
+         763ecc58  6e62993c  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         763ecc5c  00000002  
+         763ecc60  76d11c78  
+         763ecc64  76e1ceb3  /dev/ashmem/dalvik-jit-code-cache (deleted)
+         763ecc68  00000000  
+         763ecc6c  0000000a  
+         763ecc70  00000000  
+         763ecc74  41615920  
+         763ecc78  00000000  
+         763ecc7c  763ecc80  [stack:25297]
+         ........  ........
+    #04  763ecd98  719abeb8  
+         763ecd9c  00010002  
+         763ecda0  719abed8  
+         763ecda4  416f4a30  /dev/ashmem/dalvik-zygote (deleted)
+         763ecda8  763ecdd0  [stack:25297]
+         763ecdac  71979460  
+         763ecdb0  4166f7c9  /system/lib/libdvm.so
+         763ecdb4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #05  763ecdb8  719abeb8  
+         763ecdbc  71979460  
+         763ecdc0  763ecdd0  [stack:25297]
+         763ecdc4  00000000  
+         763ecdc8  00000078  
+         763ecdcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #06  763ecdd0  763ecdd0  [stack:25297]
+         763ecdd4  71979460  
+         763ecdd8  00000016  
+         763ecddc  00000000  
+         763ecde0  00000000  
+         763ecde4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         763ecde8  00000000  
+         763ecdec  00000000  
+         763ecdf0  00000000  
+         763ecdf4  00000000  
+         763ecdf8  00000000  
+         763ecdfc  00000000  
+         763ece00  00000000  
+         763ece04  00000000  
+         763ece08  00000000  
+         763ece0c  719796a8  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25298, name: ReferenceQueueD
+    r0 7197c3a8  r1 00000080  r2 00000000  r3 00000000
+    r4 7197c3a8  r5 7197c398  r6 00000000  r7 000000f0
+    r8 00000008  r9 6d5e2198  sl 00000000  fp 421b4860
+    ip 00000000  sp 764eabc8  lr 4003e040  pc 40050a80  cpsr 600d0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  d1d1d1d1d1d1d1d1  d3  d1d1d1d1d1d1d1d1
+    d4  761a3549761a6165  d5  761a61a9761a37c9
+    d6  3e4ccccd00803000  d7  42c800004b2c43e0
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 636e657265666552  d17 6144657565755165
+    d18 416d5c38415ef080  d19 7611e2c800000000
+    d20 0000000000000000  d21 000000004005da79
+    d22 bef0949000000000  d23 bef09490416b91a8
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 20000010
+
+backtrace:
+    #00  pc 00021a80  /system/lib/libc.so (__futex_syscall3+8)
+    #01  pc 0000f03c  /system/lib/libc.so (__pthread_cond_timedwait_relative+48)
+    #02  pc 0000f09c  /system/lib/libc.so (__pthread_cond_timedwait+64)
+    #03  pc 00055c1b  /system/lib/libdvm.so
+    #04  pc 0006a595  /system/lib/libdvm.so
+    #05  pc 000297e0  /system/lib/libdvm.so
+    #06  pc 00030c6c  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+    #07  pc 0002e304  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+    #08  pc 00063431  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+336)
+    #09  pc 00063455  /system/lib/libdvm.so (dvmCallMethod(Thread*, Method const*, Object*, JValue*, ...)+20)
+    #10  pc 00058133  /system/lib/libdvm.so
+    #11  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #12  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         764eab88  00000000  
+         764eab8c  00000000  
+         764eab90  00000000  
+         764eab94  00000000  
+         764eab98  00000000  
+         764eab9c  00000000  
+         764eaba0  00000000  
+         764eaba4  00000000  
+         764eaba8  00000000  
+         764eabac  00000000  
+         764eabb0  00000000  
+         764eabb4  00000000  
+         764eabb8  7197c3a8  
+         764eabbc  7197c398  
+         764eabc0  00000000  
+         764eabc4  4003e028  /system/lib/libc.so (__pthread_cond_timedwait_relative+28)
+    #00  764eabc8  00000000  
+         ........  ........
+    #01  764eabc8  00000000  
+         764eabcc  7197c398  
+         764eabd0  7197c3a8  
+         764eabd4  7197c008  
+         764eabd8  6e9abe80  
+         764eabdc  4003e0a0  /system/lib/libc.so (__pthread_cond_timedwait+68)
+    #02  764eabe0  7197c398  
+         764eabe4  00000000  
+         764eabe8  7197c398  
+         764eabec  7197c398  
+         764eabf0  00000000  
+         764eabf4  4166dc1f  /system/lib/libdvm.so
+    #03  764eabf8  7197c008  
+         764eabfc  6e9abe80  
+         764eac00  76127f74  
+         764eac04  76127f78  
+         764eac08  416ea700  /dev/ashmem/dalvik-zygote (deleted)
+         764eac0c  416e5890  /dev/ashmem/dalvik-zygote (deleted)
+         764eac10  416384c0  /system/lib/libdvm.so
+         764eac14  00000000  
+         764eac18  76127f60  
+         764eac1c  41682599  /system/lib/libdvm.so
+    #04  764eac20  00000000  
+         764eac24  00000001  
+         764eac28  00000000  
+         764eac2c  00000000  
+         764eac30  6e618f26  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         764eac34  76127f98  
+         764eac38  7197c008  
+         764eac3c  416417e4  /system/lib/libdvm.so
+    #05  764eac40  00000000  
+         764eac44  7197c008  
+         764eac48  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         764eac4c  00000000  
+         764eac50  764ead78  [stack:25298]
+         764eac54  7197c008  
+         764eac58  764eac94  [stack:25298]
+         764eac5c  6d5a4eb0  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         764eac60  421b4860  /dev/ashmem/dalvik-heap (deleted)
+         764eac64  41648c70  /system/lib/libdvm.so (dvmMterpStd(Thread*)+80)
+    #06  764eac68  00000000  
+         764eac6c  00000000  
+         764eac70  00000000  
+         764eac74  00000000  
+         764eac78  00000000  
+         764eac7c  fffffe58  
+         764eac80  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         764eac84  41646308  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+188)
+    #07  764eac88  00000000  
+         764eac8c  00000000  
+         764eac90  00000000  
+         764eac94  00000000  
+         764eac98  76127fe4  
+         764eac9c  00000000  
+         764eaca0  00000000  
+         764eaca4  00000000  
+         764eaca8  00000000  
+         764eacac  00000000  
+         764eacb0  00000000  
+         764eacb4  00000000  
+         764eacb8  00000000  
+         764eacbc  00000000  
+         764eacc0  00000000  
+         764eacc4  00000000  
+         ........  ........
+    #08  764ead18  0000001d  
+         764ead1c  0000001c  
+         764ead20  0000001c  
+         764ead24  7197c008  
+         764ead28  4007d394  
+         764ead2c  4168a96f  /system/lib/libdvm.so (os_changeThreadPriority(Thread*, int)+82)
+         764ead30  763ed000  
+         764ead34  764ead78  [stack:25298]
+         764ead38  416dbe18  /system/lib/libdvm.so
+         764ead3c  4007d394  
+         764ead40  416dc12c  
+         764ead44  416dc128  
+         764ead48  763ed000  
+         764ead4c  bef094dc  [stack]
+         764ead50  4007b2ec  /system/lib/libc.so
+         764ead54  4167b459  /system/lib/libdvm.so (dvmCallMethod(Thread*, Method const*, Object*, JValue*, ...)+24)
+    #09  764ead58  764ead78  [stack:25298]
+         764ead5c  764ead78  [stack:25298]
+         764ead60  7197c008  
+         764ead64  764ead78  [stack:25298]
+         764ead68  4007d394  
+         764ead6c  7197c008  
+         764ead70  41670137  /system/lib/libdvm.so
+         764ead74  764ead78  [stack:25298]
+    #10  764ead78  00000003  
+         764ead7c  7197c460  
+         764ead80  00000000  
+         764ead84  416109f8  
+         764ead88  7197c008  
+         764ead8c  4003c1c4  /system/lib/libc.so (__init_tls+124)
+         764ead90  00000000  
+         764ead94  416109f4  
+         764ead98  416109e0  
+         764ead9c  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         764eada0  764eadd0  [stack:25298]
+         764eada4  7197c460  
+         764eada8  41670095  /system/lib/libdvm.so
+         764eadac  7197c008  
+         764eadb0  41670095  /system/lib/libdvm.so
+         764eadb4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #11  764eadb8  7197c008  
+         764eadbc  7197c460  
+         764eadc0  764eadd0  [stack:25298]
+         764eadc4  00000016  
+         764eadc8  00000078  
+         764eadcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #12  764eadd0  764eadd0  [stack:25298]
+         764eadd4  7197c460  
+         764eadd8  00000000  
+         764eaddc  00000000  
+         764eade0  00000000  
+         764eade4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         764eade8  00000000  
+         764eadec  00000000  
+         764eadf0  00000000  
+         764eadf4  00000000  
+         764eadf8  00000000  
+         764eadfc  00000000  
+         764eae00  00000000  
+         764eae04  00000000  
+         764eae08  00000000  
+         764eae0c  7197c008  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25299, name: FinalizerDaemon
+    r0 7197ccd8  r1 00000080  r2 00000000  r3 00000000
+    r4 7197ccd8  r5 7197ccc8  r6 00000000  r7 000000f0
+    r8 00000000  r9 6d5b09d0  sl 00000000  fp 421b49c8
+    ip 00000000  sp 765e8bc8  lr 4003e040  pc 40050a80  cpsr 600d0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  d1d1d1d1d1d1d1d1  d3  d1d1d1d1d1d1d1d1
+    d4  761a3549761a6165  d5  761a61a9761a37c9
+    d6  3e4ccccd00803000  d7  42c800004b2c43e0
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 421b4668421b4570  d17 421b4840421b4750
+    d18 416d5c38415ef080  d19 7611e2c800000000
+    d20 0000000000000000  d21 000000004005da79
+    d22 bef0949000000000  d23 bef09490416b91a8
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 20000010
+
+backtrace:
+    #00  pc 00021a80  /system/lib/libc.so (__futex_syscall3+8)
+    #01  pc 0000f03c  /system/lib/libc.so (__pthread_cond_timedwait_relative+48)
+    #02  pc 0000f09c  /system/lib/libc.so (__pthread_cond_timedwait+64)
+    #03  pc 00055c1b  /system/lib/libdvm.so
+    #04  pc 0006a595  /system/lib/libdvm.so
+    #05  pc 000297e0  /system/lib/libdvm.so
+    #06  pc 00030c6c  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+    #07  pc 0002e304  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+    #08  pc 00063431  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+336)
+    #09  pc 00063455  /system/lib/libdvm.so (dvmCallMethod(Thread*, Method const*, Object*, JValue*, ...)+20)
+    #10  pc 00058133  /system/lib/libdvm.so
+    #11  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #12  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         765e8b88  00000000  
+         765e8b8c  00000000  
+         765e8b90  00000000  
+         765e8b94  00000000  
+         765e8b98  00000000  
+         765e8b9c  00000000  
+         765e8ba0  00000000  
+         765e8ba4  00000000  
+         765e8ba8  00000000  
+         765e8bac  00000000  
+         765e8bb0  00000000  
+         765e8bb4  00000000  
+         765e8bb8  7197ccd8  
+         765e8bbc  7197ccc8  
+         765e8bc0  00000000  
+         765e8bc4  4003e028  /system/lib/libc.so (__pthread_cond_timedwait_relative+28)
+    #00  765e8bc8  00000000  
+         ........  ........
+    #01  765e8bc8  00000000  
+         765e8bcc  7197ccc8  
+         765e8bd0  7197ccd8  
+         765e8bd4  7197c938  
+         765e8bd8  6e9abeb0  
+         765e8bdc  4003e0a0  /system/lib/libc.so (__pthread_cond_timedwait+68)
+    #02  765e8be0  7197ccc8  
+         765e8be4  00000000  
+         765e8be8  7197ccc8  
+         765e8bec  7197ccc8  
+         765e8bf0  00000000  
+         765e8bf4  4166dc1f  /system/lib/libdvm.so
+    #03  765e8bf8  7197c938  
+         765e8bfc  6e9abeb0  
+         765e8c00  7612bf10  
+         765e8c04  7612bf14  
+         765e8c08  416ea7d8  /dev/ashmem/dalvik-zygote (deleted)
+         765e8c0c  416e5890  /dev/ashmem/dalvik-zygote (deleted)
+         765e8c10  416384c0  /system/lib/libdvm.so
+         765e8c14  00000000  
+         765e8c18  7612befc  
+         765e8c1c  41682599  /system/lib/libdvm.so
+    #04  765e8c20  00000000  
+         765e8c24  00000001  
+         765e8c28  00000000  
+         765e8c2c  00000000  
+         765e8c30  6e618f42  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         765e8c34  7612bf34  
+         765e8c38  7197c938  
+         765e8c3c  416417e4  /system/lib/libdvm.so
+    #05  765e8c40  00000000  
+         765e8c44  7197c938  
+         765e8c48  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         765e8c4c  00000000  
+         765e8c50  765e8d78  [stack:25299]
+         765e8c54  7197c938  
+         765e8c58  765e8c94  [stack:25299]
+         765e8c5c  6d5a4eb0  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         765e8c60  421b49c8  /dev/ashmem/dalvik-heap (deleted)
+         765e8c64  41648c70  /system/lib/libdvm.so (dvmMterpStd(Thread*)+80)
+    #06  765e8c68  00000000  
+         765e8c6c  00000000  
+         765e8c70  00000000  
+         765e8c74  00000000  
+         765e8c78  00000000  
+         765e8c7c  fffffe58  
+         765e8c80  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         765e8c84  41646308  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+188)
+    #07  765e8c88  00000000  
+         765e8c8c  00000000  
+         765e8c90  00000000  
+         765e8c94  00000000  
+         765e8c98  7612bfe4  
+         765e8c9c  00000000  
+         765e8ca0  00000000  
+         765e8ca4  00000000  
+         765e8ca8  00000000  
+         765e8cac  00000000  
+         765e8cb0  00000000  
+         765e8cb4  00000000  
+         765e8cb8  00000000  
+         765e8cbc  00000000  
+         765e8cc0  00000000  
+         765e8cc4  00000000  
+         ........  ........
+    #08  765e8d18  0000001d  
+         765e8d1c  0000001c  
+         765e8d20  0000001c  
+         765e8d24  7197c938  
+         765e8d28  4007d394  
+         765e8d2c  4168a96f  /system/lib/libdvm.so (os_changeThreadPriority(Thread*, int)+82)
+         765e8d30  764eb000  
+         765e8d34  765e8d78  [stack:25299]
+         765e8d38  416dbe18  /system/lib/libdvm.so
+         765e8d3c  4007d394  
+         765e8d40  416dc12c  
+         765e8d44  416dc128  
+         765e8d48  764eb000  
+         765e8d4c  bef094dc  [stack]
+         765e8d50  4007b2ec  /system/lib/libc.so
+         765e8d54  4167b459  /system/lib/libdvm.so (dvmCallMethod(Thread*, Method const*, Object*, JValue*, ...)+24)
+    #09  765e8d58  765e8d78  [stack:25299]
+         765e8d5c  765e8d78  [stack:25299]
+         765e8d60  7197c938  
+         765e8d64  765e8d78  [stack:25299]
+         765e8d68  4007d394  
+         765e8d6c  7197c938  
+         765e8d70  41670137  /system/lib/libdvm.so
+         765e8d74  765e8d78  [stack:25299]
+    #10  765e8d78  00000003  
+         765e8d7c  7197cd90  
+         765e8d80  00000000  
+         765e8d84  616e6946  /dev/ashmem/dalvik-bitmap-1 (deleted)
+         765e8d88  657a696c  /dev/ashmem/dalvik-mark-stack (deleted)
+         765e8d8c  65614472  /dev/ashmem/dalvik-mark-stack (deleted)
+         765e8d90  006e6f6d  
+         765e8d94  765e8d93  [stack:25299]
+         765e8d98  765e8d84  [stack:25299]
+         765e8d9c  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         765e8da0  765e8dd0  [stack:25299]
+         765e8da4  7197cd90  
+         765e8da8  41670095  /system/lib/libdvm.so
+         765e8dac  7197c938  
+         765e8db0  41670095  /system/lib/libdvm.so
+         765e8db4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #11  765e8db8  7197c938  
+         765e8dbc  7197cd90  
+         765e8dc0  765e8dd0  [stack:25299]
+         765e8dc4  00000016  
+         765e8dc8  00000078  
+         765e8dcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #12  765e8dd0  765e8dd0  [stack:25299]
+         765e8dd4  7197cd90  
+         765e8dd8  00000000  
+         765e8ddc  00000000  
+         765e8de0  00000000  
+         765e8de4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         765e8de8  00000000  
+         765e8dec  00000000  
+         765e8df0  00000000  
+         765e8df4  00000000  
+         765e8df8  00000000  
+         765e8dfc  00000000  
+         765e8e00  00000000  
+         765e8e04  00000000  
+         765e8e08  00000000  
+         765e8e0c  7197c938  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25301, name: FinalizerWatchd
+    r0 719b23a8  r1 00000080  r2 00000000  r3 00000000
+    r4 719b23a8  r5 719b2398  r6 00000000  r7 000000f0
+    r8 0000000b  r9 6d5e2810  sl 00000000  fp 421b4b78
+    ip 00000000  sp 766e6bc8  lr 4003e040  pc 40050a80  cpsr 600d0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  d1d1d1d1d1d1d1d1  d3  d1d1d1d1d1d1d1d1
+    d4  761a3549761a6165  d5  761a61a9761a37c9
+    d6  3e4ccccd00803000  d7  42c800004b2c43e0
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 657a696c616e6946  d17 6f64686374615772
+    d18 416d5c38415ef080  d19 7611e2c800000000
+    d20 0000000000000000  d21 000000004005da79
+    d22 bef0949000000000  d23 bef09490416b91a8
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 20000010
+
+backtrace:
+    #00  pc 00021a80  /system/lib/libc.so (__futex_syscall3+8)
+    #01  pc 0000f03c  /system/lib/libc.so (__pthread_cond_timedwait_relative+48)
+    #02  pc 0000f09c  /system/lib/libc.so (__pthread_cond_timedwait+64)
+    #03  pc 00055c1b  /system/lib/libdvm.so
+    #04  pc 0006a595  /system/lib/libdvm.so
+    #05  pc 000297e0  /system/lib/libdvm.so
+    #06  pc 00030c6c  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+    #07  pc 0002e304  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+    #08  pc 00063431  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+336)
+    #09  pc 00063455  /system/lib/libdvm.so (dvmCallMethod(Thread*, Method const*, Object*, JValue*, ...)+20)
+    #10  pc 00058133  /system/lib/libdvm.so
+    #11  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #12  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         766e6b88  00000000  
+         766e6b8c  00000000  
+         766e6b90  00000000  
+         766e6b94  00000000  
+         766e6b98  00000000  
+         766e6b9c  00000000  
+         766e6ba0  00000000  
+         766e6ba4  00000000  
+         766e6ba8  00000000  
+         766e6bac  00000000  
+         766e6bb0  00000000  
+         766e6bb4  00000000  
+         766e6bb8  719b23a8  
+         766e6bbc  719b2398  
+         766e6bc0  00000000  
+         766e6bc4  4003e028  /system/lib/libc.so (__pthread_cond_timedwait_relative+28)
+    #00  766e6bc8  00000000  
+         ........  ........
+    #01  766e6bc8  00000000  
+         766e6bcc  719b2398  
+         766e6bd0  719b23a8  
+         766e6bd4  719b2008  
+         766e6bd8  416e4c48  
+         766e6bdc  4003e0a0  /system/lib/libc.so (__pthread_cond_timedwait+68)
+    #02  766e6be0  719b2398  
+         766e6be4  00000000  
+         766e6be8  719b2398  
+         766e6bec  719b2398  
+         766e6bf0  00000000  
+         766e6bf4  4166dc1f  /system/lib/libdvm.so
+    #03  766e6bf8  719b2008  
+         766e6bfc  416e4c48  
+         766e6c00  7612ff54  
+         766e6c04  7612ff58  
+         766e6c08  416ff820  /dev/ashmem/dalvik-zygote (deleted)
+         766e6c0c  416e5890  /dev/ashmem/dalvik-zygote (deleted)
+         766e6c10  416384c0  /system/lib/libdvm.so
+         766e6c14  00000000  
+         766e6c18  7612ff40  
+         766e6c1c  41682599  /system/lib/libdvm.so
+    #04  766e6c20  00000000  
+         766e6c24  00000001  
+         766e6c28  00000000  
+         766e6c2c  00000000  
+         766e6c30  6e618f26  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         766e6c34  7612ff78  
+         766e6c38  719b2008  
+         766e6c3c  416417e4  /system/lib/libdvm.so
+    #05  766e6c40  00000000  
+         766e6c44  719b2008  
+         766e6c48  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         766e6c4c  00000000  
+         766e6c50  766e6d78  [stack:25301]
+         766e6c54  719b2008  
+         766e6c58  766e6c94  [stack:25301]
+         766e6c5c  6d5a4eb0  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         766e6c60  421b4b78  /dev/ashmem/dalvik-heap (deleted)
+         766e6c64  41648c70  /system/lib/libdvm.so (dvmMterpStd(Thread*)+80)
+    #06  766e6c68  00000000  
+         766e6c6c  00000000  
+         766e6c70  00000000  
+         766e6c74  00000000  
+         766e6c78  00000000  
+         766e6c7c  fffffe58  
+         766e6c80  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         766e6c84  41646308  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+188)
+    #07  766e6c88  00000000  
+         766e6c8c  00000000  
+         766e6c90  00000000  
+         766e6c94  00000000  
+         766e6c98  7612ffe4  
+         766e6c9c  00000000  
+         766e6ca0  00000000  
+         766e6ca4  00000000  
+         766e6ca8  00000000  
+         766e6cac  00000000  
+         766e6cb0  00000000  
+         766e6cb4  00000000  
+         766e6cb8  00000000  
+         766e6cbc  00000000  
+         766e6cc0  00000000  
+         766e6cc4  00000000  
+         ........  ........
+    #08  766e6d18  0000001d  
+         766e6d1c  0000001c  
+         766e6d20  0000001c  
+         766e6d24  719b2008  
+         766e6d28  4007d394  
+         766e6d2c  4168a96f  /system/lib/libdvm.so (os_changeThreadPriority(Thread*, int)+82)
+         766e6d30  765e9000  
+         766e6d34  766e6d78  [stack:25301]
+         766e6d38  416dbe18  /system/lib/libdvm.so
+         766e6d3c  4007d394  
+         766e6d40  416dc12c  
+         766e6d44  416dc128  
+         766e6d48  765e9000  
+         766e6d4c  bef094dc  [stack]
+         766e6d50  4007b2ec  /system/lib/libc.so
+         766e6d54  4167b459  /system/lib/libdvm.so (dvmCallMethod(Thread*, Method const*, Object*, JValue*, ...)+24)
+    #09  766e6d58  766e6d78  [stack:25301]
+         766e6d5c  766e6d78  [stack:25301]
+         766e6d60  719b2008  
+         766e6d64  766e6d78  [stack:25301]
+         766e6d68  4007d394  
+         766e6d6c  719b2008  
+         766e6d70  41670137  /system/lib/libdvm.so
+         766e6d74  766e6d78  [stack:25301]
+    #10  766e6d78  00000003  
+         766e6d7c  719b2460  
+         766e6d80  00000000  
+         766e6d84  41610a40  
+         766e6d88  719b2008  
+         766e6d8c  4003c1c4  /system/lib/libc.so (__init_tls+124)
+         766e6d90  00000000  
+         766e6d94  41610a3f  
+         766e6d98  41610a28  
+         766e6d9c  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         766e6da0  766e6dd0  [stack:25301]
+         766e6da4  719b2460  
+         766e6da8  41670095  /system/lib/libdvm.so
+         766e6dac  719b2008  
+         766e6db0  41670095  /system/lib/libdvm.so
+         766e6db4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #11  766e6db8  719b2008  
+         766e6dbc  719b2460  
+         766e6dc0  766e6dd0  [stack:25301]
+         766e6dc4  00000016  
+         766e6dc8  00000078  
+         766e6dcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #12  766e6dd0  766e6dd0  [stack:25301]
+         766e6dd4  719b2460  
+         766e6dd8  00000000  
+         766e6ddc  00000000  
+         766e6de0  00000000  
+         766e6de4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         766e6de8  00000000  
+         766e6dec  00000000  
+         766e6df0  00000000  
+         766e6df4  00000000  
+         766e6df8  00000000  
+         766e6dfc  00000000  
+         766e6e00  00000000  
+         766e6e04  00000000  
+         766e6e08  00000000  
+         766e6e0c  719b2008  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25302, name: Binder_1
+    r0 0000002f  r1 c0186201  r2 768e2cf0  r3 768e2ce8
+    r4 761347d0  r5 761347a0  r6 76134800  r7 00000036
+    r8 00000001  r9 767e5000  sl bef0933c  fp 4007b2ec
+    ip 00000001  sp 768e2cd8  lr 4005bfa7  pc 4004f704  cpsr 600e0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  761a3549761a6165  d5  761a61a9761a37c9
+    d6  3e4ccccd00803000  d7  400000004b2c43e0
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 00720064006e0061  d17 002e00640069006f
+    d18 002e007000700061  d19 0061007200540049
+    d20 006500690073006e  d21 006f004e0074006e
+    d22 0069006600690074  d23 0069007400610063
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 80000010
+
+backtrace:
+    #00  pc 00020704  /system/lib/libc.so (__ioctl+8)
+    #01  pc 0002cfa3  /system/lib/libc.so (ioctl+14)
+    #02  pc 0001d3ed  /system/lib/libbinder.so (android::IPCThreadState::talkWithDriver(bool)+140)
+    #03  pc 0001daf7  /system/lib/libbinder.so (android::IPCThreadState::getAndExecuteCommand()+6)
+    #04  pc 0001db8d  /system/lib/libbinder.so (android::IPCThreadState::joinThreadPool(bool)+48)
+    #05  pc 000219f5  /system/lib/libbinder.so
+    #06  pc 0000ea5d  /system/lib/libutils.so (android::Thread::_threadLoop(void*)+216)
+    #07  pc 0004dfbd  /system/lib/libandroid_runtime.so (android::AndroidRuntime::javaThreadShell(void*)+68)
+    #08  pc 0000e58f  /system/lib/libutils.so
+    #09  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #10  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         768e2c98  00000000  
+         768e2c9c  00000000  
+         768e2ca0  00010001  
+         768e2ca4  400f7295  /system/lib/libbinder.so (android::IPCThreadState::freeBuffer(android::Parcel*, unsigned char const*, unsigned int, unsigned int const*, unsigned int, void*))
+         768e2ca8  761347a0  
+         768e2cac  00000000  
+         768e2cb0  00000000  
+         768e2cb4  00000000  
+         768e2cb8  00000000  
+         768e2cbc  00000000  
+         768e2cc0  00000000  
+         768e2cc4  00000000  
+         768e2cc8  00000001  
+         768e2ccc  00000002  
+         768e2cd0  0000000a  
+         768e2cd4  4008eb51  /system/lib/libcutils.so (set_sched_policy+132)
+    #00  768e2cd8  0000002f  
+         ........  ........
+    #01  768e2cd8  0000002f  
+         768e2cdc  768e2ce8  [stack:25302]
+         768e2ce0  400f73f1  /system/lib/libbinder.so (android::IPCThreadState::talkWithDriver(bool)+144)
+         768e2ce4  c0186201  
+         768e2ce8  768e2cf0  [stack:25302]
+         768e2cec  00000008  
+    #02  768e2cf0  00000008  
+         768e2cf4  00000008  
+         768e2cf8  76134950  
+         768e2cfc  00000100  
+         768e2d00  00000000  
+         768e2d04  76134848  
+         768e2d08  761347a0  
+         768e2d0c  76134800  
+         768e2d10  00000001  
+         768e2d14  401059ec  /system/lib/libbinder.so
+         768e2d18  400c6559  /system/lib/libutils.so
+         768e2d1c  400f7afb  /system/lib/libbinder.so (android::IPCThreadState::getAndExecuteCommand()+10)
+    #03  768e2d20  761347a0  
+         768e2d24  76134800  
+         768e2d28  00000001  
+         768e2d2c  400f7b91  /system/lib/libbinder.so (android::IPCThreadState::joinThreadPool(bool)+52)
+    #04  768e2d30  761347a0  
+         768e2d34  00000001  
+         768e2d38  416e4b90  
+         768e2d3c  768e2d50  [stack:25302]
+         768e2d40  00000001  
+         768e2d44  400fb9f9  /system/lib/libbinder.so
+    #05  768e2d48  416e4b90  
+         768e2d4c  400c6a5f  /system/lib/libutils.so (android::Thread::_threadLoop(void*)+218)
+    #06  768e2d50  416e4b90  
+         768e2d54  00008000  
+         768e2d58  416e4b90  
+         768e2d5c  416e4bc8  
+         768e2d60  7197cff8  
+         768e2d64  7197cff8  
+         768e2d68  400c6985  /system/lib/libutils.so (android::Thread::_threadLoop(void*))
+         768e2d6c  401bb8ec  /system/lib/libandroid_runtime.so
+         768e2d70  416e4b90  
+         768e2d74  40154fbf  /system/lib/libandroid_runtime.so (android::AndroidRuntime::javaThreadShell(void*)+70)
+    #07  768e2d78  719a64a8  
+         768e2d7c  00010004  
+         768e2d80  7197cff8  
+         768e2d84  00000000  
+         768e2d88  719a64c0  
+         768e2d8c  719a64c0  
+         768e2d90  00000000  
+         768e2d94  40154f79  /system/lib/libandroid_runtime.so (android::AndroidRuntime::javaThreadShell(void*))
+         768e2d98  71979fd0  
+         768e2d9c  400c6591  /system/lib/libutils.so
+    #08  768e2da0  00000000  
+         768e2da4  768e2dd0  [stack:25302]
+         768e2da8  719b2a40  
+         768e2dac  400c6559  /system/lib/libutils.so
+         768e2db0  719a64a8  
+         768e2db4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #09  768e2db8  719a64a8  
+         768e2dbc  719b2a40  
+         768e2dc0  768e2dd0  [stack:25302]
+         768e2dc4  00000000  
+         768e2dc8  00000078  
+         768e2dcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #10  768e2dd0  768e2dd0  [stack:25302]
+         768e2dd4  719b2a40  
+         768e2dd8  00000000  
+         768e2ddc  00000000  
+         768e2de0  00000000  
+         768e2de4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         768e2de8  00000000  
+         768e2dec  00000000  
+         768e2df0  00000000  
+         768e2df4  00000000  
+         768e2df8  00000000  
+         768e2dfc  00000000  
+         768e2e00  00000000  
+         768e2e04  00000000  
+         768e2e08  00000000  
+         768e2e0c  76134008  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25303, name: Binder_2
+    r0 0000002f  r1 c0186201  r2 769e0cf0  r3 769e0ce8
+    r4 7613b530  r5 7613b500  r6 7613b560  r7 00000036
+    r8 00000001  r9 768e3000  sl 768e2bd4  fp 4007b2ec
+    ip 00000001  sp 769e0cd8  lr 4005bfa7  pc 4004f704  cpsr 600b0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  761a3549761a6165  d5  761a61a9761a37c9
+    d6  3e4ccccd00803000  d7  400000004b2c43e0
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 00720064006e0061  d17 002e00640069006f
+    d18 002e007000700061  d19 0061007200540049
+    d20 006500690073006e  d21 006f004e0074006e
+    d22 0069006600690074  d23 0069007400610063
+    d24 0000000000000000  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 80000010
+
+backtrace:
+    #00  pc 00020704  /system/lib/libc.so (__ioctl+8)
+    #01  pc 0002cfa3  /system/lib/libc.so (ioctl+14)
+    #02  pc 0001d3ed  /system/lib/libbinder.so (android::IPCThreadState::talkWithDriver(bool)+140)
+    #03  pc 0001daf7  /system/lib/libbinder.so (android::IPCThreadState::getAndExecuteCommand()+6)
+    #04  pc 0001db8d  /system/lib/libbinder.so (android::IPCThreadState::joinThreadPool(bool)+48)
+    #05  pc 000219f5  /system/lib/libbinder.so
+    #06  pc 0000ea5d  /system/lib/libutils.so (android::Thread::_threadLoop(void*)+216)
+    #07  pc 0004dfbd  /system/lib/libandroid_runtime.so (android::AndroidRuntime::javaThreadShell(void*)+68)
+    #08  pc 0000e58f  /system/lib/libutils.so
+    #09  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #10  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         769e0c98  769e0cec  [stack:25303]
+         769e0c9c  400c6559  /system/lib/libutils.so
+         769e0ca0  768e3000  
+         769e0ca4  768e2bd4  [stack:25302]
+         769e0ca8  4007b2ec  /system/lib/libc.so
+         769e0cac  41654c17  /system/lib/libdvm.so
+         769e0cb0  416ddd00  
+         769e0cb4  769e0cd8  [stack:25303]
+         769e0cb8  1d20046a  
+         769e0cbc  416643b7  /system/lib/libdvm.so
+         769e0cc0  00000000  
+         769e0cc4  769e0cd8  [stack:25303]
+         769e0cc8  1d20046a  
+         769e0ccc  416643d9  /system/lib/libdvm.so
+         769e0cd0  76d08498  
+         769e0cd4  76d084b4  
+    #00  769e0cd8  0000002f  
+         ........  ........
+    #01  769e0cd8  0000002f  
+         769e0cdc  769e0ce8  [stack:25303]
+         769e0ce0  400f73f1  /system/lib/libbinder.so (android::IPCThreadState::talkWithDriver(bool)+144)
+         769e0ce4  c0186201  
+         769e0ce8  769e0cf0  [stack:25303]
+         769e0cec  00000100  
+    #02  769e0cf0  00000000  
+         769e0cf4  00000000  
+         769e0cf8  7613b6b0  
+         769e0cfc  00000100  
+         769e0d00  00000000  
+         769e0d04  7613b5a8  
+         769e0d08  7613b500  
+         769e0d0c  7613b560  
+         769e0d10  00000000  
+         769e0d14  401059ec  /system/lib/libbinder.so
+         769e0d18  400c6559  /system/lib/libutils.so
+         769e0d1c  400f7afb  /system/lib/libbinder.so (android::IPCThreadState::getAndExecuteCommand()+10)
+    #03  769e0d20  7613b500  
+         769e0d24  7613b560  
+         769e0d28  00000000  
+         769e0d2c  400f7b91  /system/lib/libbinder.so (android::IPCThreadState::joinThreadPool(bool)+52)
+    #04  769e0d30  7613b500  
+         769e0d34  00000000  
+         769e0d38  76134a58  
+         769e0d3c  769e0d50  [stack:25303]
+         769e0d40  00000001  
+         769e0d44  400fb9f9  /system/lib/libbinder.so
+    #05  769e0d48  76134a58  
+         769e0d4c  400c6a5f  /system/lib/libutils.so (android::Thread::_threadLoop(void*)+218)
+    #06  769e0d50  76134a58  
+         769e0d54  00008000  
+         769e0d58  76134a58  
+         769e0d5c  76134a90  
+         769e0d60  719b2fd0  
+         769e0d64  719b2fd0  
+         769e0d68  400c6985  /system/lib/libutils.so (android::Thread::_threadLoop(void*))
+         769e0d6c  401bb8ec  /system/lib/libandroid_runtime.so
+         769e0d70  76134a58  
+         769e0d74  40154fbf  /system/lib/libandroid_runtime.so (android::AndroidRuntime::javaThreadShell(void*)+70)
+    #07  769e0d78  719b2fb0  
+         769e0d7c  00010004  
+         769e0d80  719b2fd0  
+         769e0d84  00000000  
+         769e0d88  76134b18  
+         769e0d8c  76134b18  
+         769e0d90  00000000  
+         769e0d94  40154f79  /system/lib/libandroid_runtime.so (android::AndroidRuntime::javaThreadShell(void*))
+         769e0d98  71979fd0  
+         769e0d9c  400c6591  /system/lib/libutils.so
+    #08  769e0da0  00000000  
+         769e0da4  769e0dd0  [stack:25303]
+         769e0da8  76134b28  
+         769e0dac  400c6559  /system/lib/libutils.so
+         769e0db0  76134b00  
+         769e0db4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #09  769e0db8  76134b00  
+         769e0dbc  76134b28  
+         769e0dc0  769e0dd0  [stack:25303]
+         769e0dc4  00000000  
+         769e0dc8  00000078  
+         769e0dcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #10  769e0dd0  769e0dd0  [stack:25303]
+         769e0dd4  76134b28  
+         769e0dd8  00000000  
+         769e0ddc  00000000  
+         769e0de0  00000000  
+         769e0de4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         769e0de8  00000000  
+         769e0dec  00000000  
+         769e0df0  00000000  
+         769e0df4  00000000  
+         769e0df8  00000000  
+         769e0dfc  00000000  
+         769e0e00  00000000  
+         769e0e04  00000000  
+         769e0e08  00000000  
+         769e0e0c  7613b008  
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 25276, tid: 25310, name: .ProcessManager
+    r0 00000000  r1 76e19ae4  r2 00000000  r3 00000000
+    r4 76cd0900  r5 00000000  r6 00000004  r7 00000072
+    r8 1d300005  r9 00000000  sl 76d08018  fp 76e19b24
+    ip 704558a8  sp 76e19ae0  lr 70440c73  pc 4004ef68  cpsr 400d0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  0000000000000000  d5  0000000000000000
+    d6  3f13cd3600000000  d7  3f8000003f800000
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 6e616c2e6176616a  d17 7365636f72502e67
+    d18 6d5a4bd86d5a4ba0  d19 6d5a4c486d5a4c10
+    d20 6d5a4cb86d5a4c80  d21 6d5a4d286d5a4cf0
+    d22 6d5a4d986d5a4d60  d23 6d5a4e086d5a4dd0
+    d24 b94377ce858a5d48  d25 0000000000000000
+    d26 0000000000000000  d27 0000000000000000
+    d28 0100010001000100  d29 0100010001000100
+    d30 0000000000000000  d31 0000000000000000
+    scr 60000010
+
+backtrace:
+    #00  pc 0001ff68  /system/lib/libc.so (wait4+8)
+    #01  pc 0001cc6f  /system/lib/libjavacore.so
+    #02  pc 0002034c  /system/lib/libdvm.so (dvmPlatformInvoke+112)
+    #03  pc 00050fcf  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+398)
+    #04  pc 000297e0  /system/lib/libdvm.so
+    #05  pc 00030c6c  /system/lib/libdvm.so (dvmMterpStd(Thread*)+76)
+    #06  pc 0002e304  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+184)
+    #07  pc 00063431  /system/lib/libdvm.so (dvmCallMethodV(Thread*, Method const*, Object*, bool, JValue*, std::__va_list)+336)
+    #08  pc 00063455  /system/lib/libdvm.so (dvmCallMethod(Thread*, Method const*, Object*, JValue*, ...)+20)
+    #09  pc 00058133  /system/lib/libdvm.so
+    #10  pc 0000d248  /system/lib/libc.so (__thread_entry+72)
+    #11  pc 0000d3e0  /system/lib/libc.so (pthread_create+240)
+
+stack:
+         76e19aa0  00000000  
+         76e19aa4  4021b068  /system/lib/libnativehelper.so
+         76e19aa8  76cd0900  
+         76e19aac  70457914  /system/lib/libjavacore.so
+         76e19ab0  0000000a  
+         76e19ab4  70451bfb  /system/lib/libjavacore.so
+         76e19ab8  fffffe5c  
+         76e19abc  423bbcc0  /dev/ashmem/dalvik-heap (deleted)
+         76e19ac0  76d08618  
+         76e19ac4  76d08618  
+         76e19ac8  416d5c38  /system/lib/libdvm.so
+         76e19acc  4166d911  /system/lib/libdvm.so
+         76e19ad0  ffffffff  
+         76e19ad4  704558a8  /system/lib/libjavacore.so
+         76e19ad8  1d200005  
+         76e19adc  416dbe18  /system/lib/libdvm.so
+    #00  76e19ae0  76cd0900  
+         ........  ........
+    #01  76e19ae0  76cd0900  
+         76e19ae4  1d300001  
+         76e19ae8  00000000  
+         76e19aec  6d5ccd70  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         76e19af0  76d08008  
+         76e19af4  00000004  
+         76e19af8  76d1bf5c  
+         76e19afc  76e19b0c  [stack:25310]
+         76e19b00  76d1bf50  
+         76e19b04  41638350  /system/lib/libdvm.so (dvmPlatformInvoke+116)
+    #02  76e19b08  00000000  
+         76e19b0c  41663fbd  /system/lib/libdvm.so
+         76e19b10  76d1bf4c  
+         76e19b14  00000001  
+         76e19b18  6e771982  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         76e19b1c  416fc598  /dev/ashmem/dalvik-zygote (deleted)
+         76e19b20  423bbe58  /dev/ashmem/dalvik-heap (deleted)
+         76e19b24  41668fd3  /system/lib/libdvm.so (dvmCallJNIMethod(unsigned int const*, JValue*, Method const*, Thread*)+402)
+    #03  76e19b28  76d1bf4c  
+         76e19b2c  6e77197e  /data/dalvik-cache/system@framework@core.jar@classes.dex
+         76e19b30  70440c59  /system/lib/libjavacore.so
+         76e19b34  76d08018  
+         76e19b38  00000000  
+         76e19b3c  00000000  
+         76e19b40  00000000  
+         76e19b44  00000000  
+         76e19b48  00000000  
+         76e19b4c  4007d394  
+         76e19b50  00000000  
+         76e19b54  0000000c  
+         76e19b58  0000000c  
+         76e19b5c  421ab008  /dev/ashmem/dalvik-heap (deleted)
+         76e19b60  00000001  
+         76e19b64  0000000c  
+         ........  ........
+    #04  76e19c40  00000000  
+         76e19c44  76d08008  
+         76e19c48  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         76e19c4c  00000000  
+         76e19c50  76e19d78  [stack:25310]
+         76e19c54  76d08008  
+         76e19c58  76e19c94  [stack:25310]
+         76e19c5c  6d908be0  /dev/ashmem/dalvik-LinearAlloc (deleted)
+         76e19c60  423bbe58  /dev/ashmem/dalvik-heap (deleted)
+         76e19c64  41648c70  /system/lib/libdvm.so (dvmMterpStd(Thread*)+80)
+    #05  76e19c68  00000000  
+         76e19c6c  00000000  
+         76e19c70  00000000  
+         76e19c74  00000000  
+         76e19c78  00000000  
+         76e19c7c  fffffe58  
+         76e19c80  41648c20  /system/lib/libdvm.so (dvmMterpStd(Thread*))
+         76e19c84  41646308  /system/lib/libdvm.so (dvmInterpret(Thread*, Method const*, JValue*)+188)
+    #06  76e19c88  00000000  
+         76e19c8c  00000000  
+         76e19c90  00000000  
+         76e19c94  00000000  
+         76e19c98  76d1bfe4  
+         76e19c9c  00000000  
+         76e19ca0  00000000  
+         76e19ca4  00000000  
+         76e19ca8  00000000  
+         76e19cac  00000000  
+         76e19cb0  00000000  
+         76e19cb4  00000000  
+         76e19cb8  00000000  
+         76e19cbc  00000000  
+         76e19cc0  00000000  
+         76e19cc4  00000000  
+         ........  ........
+    #07  76e19d18  0000001d  
+         76e19d1c  0000001c  
+         76e19d20  0000001c  
+         76e19d24  76d08008  
+         76e19d28  4007d394  
+         76e19d2c  4168a96f  /system/lib/libdvm.so (os_changeThreadPriority(Thread*, int)+82)
+         76e19d30  76d1c000  
+         76e19d34  76e19d78  [stack:25310]
+         76e19d38  416dbe18  /system/lib/libdvm.so
+         76e19d3c  4007d394  
+         76e19d40  416dc12c  
+         76e19d44  416dc128  
+         76e19d48  76d1c000  
+         76e19d4c  bef09184  [stack]
+         76e19d50  4007b2ec  /system/lib/libc.so
+         76e19d54  4167b459  /system/lib/libdvm.so (dvmCallMethod(Thread*, Method const*, Object*, JValue*, ...)+24)
+    #08  76e19d58  76e19d78  [stack:25310]
+         76e19d5c  76e19d78  [stack:25310]
+         76e19d60  76d08008  
+         76e19d64  76e19d78  [stack:25310]
+         76e19d68  4007d394  
+         76e19d6c  76d08008  
+         76e19d70  41670137  /system/lib/libdvm.so
+         76e19d74  76e19d78  [stack:25310]
+    #09  76e19d78  00000003  
+         76e19d7c  76d06560  
+         76e19d80  00000000  
+         76e19d84  41610cc8  
+         76e19d88  76d08008  
+         76e19d8c  4003c1c4  /system/lib/libc.so (__init_tls+124)
+         76e19d90  00000000  
+         76e19d94  41610cc0  
+         76e19d98  41610ca8  
+         76e19d9c  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         76e19da0  76e19dd0  [stack:25310]
+         76e19da4  76d06560  
+         76e19da8  41670095  /system/lib/libdvm.so
+         76e19dac  76d08008  
+         76e19db0  41670095  /system/lib/libdvm.so
+         76e19db4  4003c24c  /system/lib/libc.so (__thread_entry+76)
+    #10  76e19db8  76d08008  
+         76e19dbc  76d06560  
+         76e19dc0  76e19dd0  [stack:25310]
+         76e19dc4  00000016  
+         76e19dc8  00000078  
+         76e19dcc  4003c3e4  /system/lib/libc.so (pthread_create+244)
+    #11  76e19dd0  76e19dd0  [stack:25310]
+         76e19dd4  76d06560  
+         76e19dd8  0000000a  
+         76e19ddc  00000000  
+         76e19de0  00000000  
+         76e19de4  573f585e  /dev/ashmem/dalvik-heap (deleted)
+         76e19de8  00000000  
+         76e19dec  00000000  
+         76e19df0  00000000  
+         76e19df4  00000000  
+         76e19df8  00000000  
+         76e19dfc  00000000  
+         76e19e00  00000000  
+         76e19e04  00000000  
+         76e19e08  00000000  
+         76e19e0c  76d08008  
+--------- log /dev/log/main
+03-17 00:46:50.032 25276 25276 D dalvikvm: Late-enabling CheckJNI
+03-17 00:46:50.072 25276 25296 D dalvikvm: Debugger has detached; object registry had 1 entries
+03-17 00:46:50.202 25276 25276 D Andesy  : on create
+03-17 00:50:10.122 25276 25295 I dalvikvm: threadid=3: reacting to signal 3
+03-17 00:50:10.162 25276 25295 I dalvikvm: Wrote stack traces to '/data/anr/traces.txt'
+03-17 00:50:14.452 25276 25276 F libc    : Fatal signal 6 (SIGABRT) at 0x00000479 (code=0), thread 25276 (com.xl.andesy)

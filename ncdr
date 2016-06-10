@@ -1,0 +1,139 @@
+#!/usr/bin/env python
+
+
+import getopt
+import os
+import sys
+
+import core
+import tool
+
+def CheckArchIsSet():
+  if not tool.ARCH:
+    print "Arch should be specified, like arm, arm64 ..."
+    sys.exit(1)
+
+def PrintUsage():
+  usage = "usage: " + sys.argv[0] + " [OPTIONS] [FILE]\n"
+
+  msg = """
+
+    OPTIONS:
+
+    --arch=arm|arm64|mips|mips64|x86|x86_64|thumb
+          the target architecture
+          thumb only used on hexcode mode.
+
+    --symbols=<path-of-symbols-dir>
+
+    --symbols-tgz=<path-of-symbols-tgz-file>
+          It will be unpack to output/unpack_symbols/
+
+    --backtrace, -b
+          Will read backtrace inputted by user. Don't need tombstone file.
+          --arch argument is needed.
+
+    --hexcode
+          Will read hex code for disassembling inputted by user. Don't need tombstone file.
+          --arch argument is needed. If code is thumb mode, add thumb behind this.
+
+    --oatdump-from-device
+          Will decode oat file use files from device connected.
+          Be sure that the correct device happend native crash is connected.
+
+    --oatdump-host=<path of oatdump on host device>
+          In general, it is at <repo-root>/out/host/linux-x86/bin/
+
+    --oatfile-dir=<path of oatfile dir>
+          Directory contain oat files that you pull or extract from package.
+
+    --most
+          Show the most information as much as we can get from tombstone file.
+
+    FILE:
+
+    Tombstone file that we should analyze.
+
+    YOU CAN VISIT http://wiki.n.miui.com/display/Android/ncdr FOR DETAILS.
+
+  """
+  print msg + usage
+  sys.exit(1)
+
+def main():
+  try:
+    options, arguments = getopt.getopt(sys.argv[1:], "a:s:b",
+                                       ["arch=",
+                                        "symbols=",
+                                        "symbols-tgz=",
+                                        "oatdump-host=",
+                                        "oatfile-dir=",
+                                        "oatdump-from-device",
+                                        "backtrace",
+                                        "hexcode",
+                                        "most",
+                                        "help"])
+  except getopt.GetoptError, unused_error:
+    print "  INVALID ARGS!"
+    PrintUsage()
+
+  parseBacktrace = False
+  parseHexCode = False
+  isThumb = False
+  for option, value in options:
+    if option in ["-h" "--help"]:
+      PrintUsage()
+    elif option in ["-s", "--symbols"]:
+      tool.SYMBOLS_DIR = value
+    elif option == "--symbols-tgz":
+      core.UnpackSymbolsTgz(value)
+    elif option in ["-a", "--arch"]:
+      if "thumb" == value:
+        isThumb = True
+        tool.ARCH = "arm"
+      else:
+        tool.ARCH = value
+    elif option == "--oatdump-from-device":
+      tool.OATDUMP_FROM_DEVICE = True
+    elif option == "--oatdump-host":
+      tool.SetOatDumpTool(value)
+    elif option == "--oatfile-dir":
+      tool.SetOatFileDir(value)
+    elif option in ["-b", "--backtrace"]:
+      parseBacktrace = True
+    elif option == "--hexcode":
+      parseHexCode = True
+    elif option == "--most":
+      core.DETAIL = True
+    else:
+      print "invalid arg, value is " + value
+
+  if len(arguments) > 1:
+    PrintUsage()
+
+  if parseBacktrace:
+    CheckArchIsSet()
+    print "Input backtrace and finish with Ctrl-D:"
+    f = sys.stdin
+    lines = f.readlines()
+    f.close()
+    core.ProcessBackTrace(lines)
+  elif parseHexCode:
+    CheckArchIsSet()
+    print "Input hex code and finish with Ctrl-D:"
+    f = sys.stdin
+    lines = f.readlines()
+    f.close()
+    core.ProcessHexCode(lines, isThumb)
+  elif arguments and not arguments[0] == "-":
+    print "Analyzing for native crash in %s" % arguments[0]
+    f = open(arguments[0], "r")
+    lines = f.readlines()
+    f.close()
+    core.ProcessTombStone(lines)
+  else:
+    print "Nothing was inputted ~>_<~"
+    PrintUsage()
+
+if __name__ == "__main__":
+  main()

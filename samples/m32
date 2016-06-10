@@ -1,0 +1,1056 @@
+*** *** *** *** *** *** *** *** *** *** *** *** *** *** *** ***
+Build fingerprint: 'Xiaomi/cancro_wc_lte/cancro:6.0.1/MMB29M/6.3.23:user/release-keys'
+Revision: '0'
+ABI: 'arm'
+pid: 14626, tid: 14653, name: Compiler driver  >>> /system/bin/dex2oat <<<
+signal 7 (SIGBUS), code 2 (BUS_ADRERR), fault addr 0xa9b43000
+    r0 a9b43000  r1 b6ba5ec0  r2 a9b432aa  r3 00000066
+    r4 a9b42ea8  r5 ab8673f2  r6 000003f2  r7 ab867148
+    r8 ab8e7f98  r9 b21827a8  sl ae98a3c0  fp b2182810
+    ip b6f688bc  sp ae98a2b8  lr 00000000  pc b6da2c20  cpsr 80070030
+    d0  e114f8d92087f641  d1  68084641900647f0
+    d2  e024f8d001c4f8d0  d3  689b9b00900447f0
+    d4  f8dc449c2cf8f643  d5  811cf0002b003000
+    d6  9800000299069307  d7  f2c07cfcf6486840
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 2cc583c8a9b42878  d17 1024f24dbf48f7ff
+    d18 000247f0e14cf8d9  d19 f6449209befdf7ff
+    d20 47f0e14cf8d93061  d21 bf01f7ff9a090003
+    d22 e14cf8d97088f248  d23 f245bf10f7ff47f0
+    d24 2000000010000000  d25 8000000040000000
+    d26 00000140000000a0  d27 0000010000000080
+    d28 2222000011110000  d29 8888000044440000
+    d30 0222000001110000  d31 0888000004440000
+    scr 20000011
+
+backtrace:
+    #00 pc 001d2c20  /system/lib/libart-compiler.so
+    #01 pc 000db071  /system/lib/libart-compiler.so (art::CompiledMethod::SwapAllocCompiledMethod(art::CompilerDriver*, art::InstructionSet, art::ArrayRef<unsigned char const> const&, unsigned int, unsigned int, unsigned int, art::SrcMap<std::__1::allocator<art::SrcMapElem> >*, art::ArrayRef<unsigned char const> const&, art::ArrayRef<unsigned char const> const&, art::ArrayRef<unsigned char const> const&, art::ArrayRef<unsigned char const> const&, art::ArrayRef<art::LinkerPatch const> const&)+376)
+    #02 pc 0026a4cb  /system/lib/libart-compiler.so (art::OptimizingCompiler::CompileOptimized(art::HGraph*, art::CodeGenerator*, art::CompilerDriver*, art::DexFile const&, art::DexCompilationUnit const&, art::PassInfoPrinter*) const+2122)
+    #03 pc 0026c3dd  /system/lib/libart-compiler.so (art::OptimizingCompiler::TryCompile(art::DexFile::CodeItem const*, unsigned int, art::InvokeType, unsigned short, unsigned int, _jobject*, art::DexFile const&) const+2632)
+    #04 pc 0026c689  /system/lib/libart-compiler.so (art::OptimizingCompiler::Compile(art::DexFile::CodeItem const*, unsigned int, art::InvokeType, unsigned short, unsigned int, _jobject*, art::DexFile const&) const+236)
+    #05 pc 001d18a3  /system/lib/libart-compiler.so (art::CompilerDriver::CompileMethod(art::Thread*, art::DexFile::CodeItem const*, unsigned int, art::InvokeType, unsigned short, unsigned int, _jobject*, art::DexFile const&, art::DexToDexCompilationLevel, bool)+1898)
+    #06 pc 001d2513  /system/lib/libart-compiler.so (art::CompilerDriver::CompileClass(art::ParallelCompilationManager const*, unsigned int)+1866)
+    #07 pc 001c853b  /system/lib/libart-compiler.so
+    #08 pc 0035d2dd  /system/lib/libart.so (art::ThreadPoolWorker::Run()+264)
+    #09 pc 0035d9a7  /system/lib/libart.so (art::ThreadPoolWorker::Callback(void*)+54)
+    #10 pc 0003f54f  /system/lib/libc.so (__pthread_start(void*)+30)
+    #11 pc 00019c2f  /system/lib/libc.so (__start_thread+6)
+
+stack:
+         ae98a278  a9b42eb8  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         ae98a27c  ae98a3c0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a280  b2182810  [anon:libc_malloc]
+         ae98a284  b6eb412f  /system/lib/libart-compiler.so (art::SwapSpace::Alloc(unsigned int)+102)
+         ae98a288  b2182678  [anon:libc_malloc]
+         ae98a28c  00000000
+         ae98a290  a9b432b0  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         ae98a294  00ffcd50
+         ae98a298  00000003
+         ae98a29c  a9b42ea8  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         ae98a2a0  00000003
+         ae98a2a4  000003f2
+         ae98a2a8  ab867000  [anon:libc_malloc]
+         ae98a2ac  ab8e7f98  [anon:libc_malloc]
+         ae98a2b0  b21827a8  [anon:libc_malloc]
+         ae98a2b4  b6da2c0d  /system/lib/libart-compiler.so
+    #00  ae98a2b8  a9b42878  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         ae98a2bc  ae642000  [anon:libc_malloc]
+         ae98a2c0  b644de20  [anon:libc_malloc]
+         ae98a2c4  b218280c  [anon:libc_malloc]
+         ae98a2c8  16bed215  /dev/ashmem/dalvik-main space (deleted)
+         ae98a2cc  00000064
+         ae98a2d0  ae98a3e0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a2d4  00000000
+         ae98a2d8  16bed215  /dev/ashmem/dalvik-main space (deleted)
+         ae98a2dc  ae98a3c0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a2e0  00000000
+         ae98a2e4  ae98a2d8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a2e8  a9b42878  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         ae98a2ec  a9b42820  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         ae98a2f0  00000000
+         ae98a2f4  b2182500  [anon:libc_malloc]
+         ........  ........
+    #01  ae98a310  00000000
+         ae98a314  00000000
+         ae98a318  ae98a5d8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a31c  ae98a3e0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a320  ae98a448  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a324  ae98a40c  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a328  00000000
+         ae98a32c  00000000
+         ae98a330  ae98a3c8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a334  ae98a3d8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a338  ab87c0a0  [anon:libc_malloc]
+         ae98a33c  b6e3a4cf  /system/lib/libart-compiler.so (art::OptimizingCompiler::CompileOptimized(art::HGraph*, art::CodeGenerator*, art::CompilerDriver*, art::DexFile const&, art::DexCompilationUnit const&, art::PassInfoPrinter*) const+2126)
+    #02  ae98a340  00008de0
+         ae98a344  00000000
+         ae98a348  ae98a3e0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a34c  ae98a3b8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a350  ae98a3c0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a354  ae98a3c8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a358  ae98a3d0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a35c  ae98a3d8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a360  00000080
+         ae98a364  ae98a3e0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a368  ae98a3ec  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a36c  00000003
+         ae98a370  00008de0
+         ae98a374  00000000
+         ae98a378  00000060
+         ae98a37c  ae98a5d8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ........  ........
+    #03  ae98a570  b646fbe0  [anon:libc_malloc]
+         ae98a574  ae98a65c  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a578  ae98a5d0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a57c  000076bc
+         ae98a580  00000001
+         ae98a584  ad62d780  [anon:libc_malloc]
+         ae98a588  00000001
+         ae98a58c  00000001
+         ae98a590  abb57000  [anon:libc_malloc]
+         ae98a594  ae98a5d8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a598  ae98a5b8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a59c  b6bf1e28  /system/lib/libart.so
+         ae98a5a0  00000000
+         ae98a5a4  ae98a65c  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a5a8  ae98a5f0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a5ac  b6f29088  /system/lib/libart-compiler.so
+         ........  ........
+    #04  ae98a6b8  000008ee
+         ae98a6bc  000076bc
+         ae98a6c0  00100086
+         ae98a6c4  b646fbe0  [anon:libc_malloc]
+         ae98a6c8  b646fbe0  [anon:libc_malloc]
+         ae98a6cc  ae642000  [anon:libc_malloc]
+         ae98a6d0  00000001
+         ae98a6d4  ae642000  [anon:libc_malloc]
+         ae98a6d8  b2182500  [anon:libc_malloc]
+         ae98a6dc  b6e3c59d  /system/lib/libart-compiler.so (art::OptimizingCompiler::Compile(art::DexFile::CodeItem const*, unsigned int, art::InvokeType, unsigned short, unsigned int, _jobject*, art::DexFile const&) const)
+         ae98a6e0  b6f68634  /system/lib/libart-compiler.so
+         ae98a6e4  00000001
+         ae98a6e8  b1d96a68  /dev/ashmem/dalvik-classes.dex extracted in memory from base.apk (deleted)
+         ae98a6ec  b6da18a5  /system/lib/libart-compiler.so (art::CompilerDriver::CompileMethod(art::Thread*, art::DexFile::CodeItem const*, unsigned int, art::InvokeType, unsigned short, unsigned int, _jobject*, art::DexFile const&, art::DexToDexCompilationLevel, bool)+1900)
+    #05  ae98a6f0  000008ee
+         ae98a6f4  000076bc
+         ae98a6f8  00100086
+         ae98a6fc  b646fbe0  [anon:libc_malloc]
+         ae98a700  00000002
+         ae98a704  00000000
+         ae98a708  c2d242c4
+         ae98a70c  000008cd
+         ae98a710  b66feec0
+         ae98a714  00100086
+         ae98a718  ae98a738  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a71c  00000001
+         ae98a720  ae98a840  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a724  00000031
+         ae98a728  ae98a854  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a72c  11965f91
+         ........  ........
+    #06  ae98a7a0  00000002
+         ae98a7a4  000008ee
+         ae98a7a8  000076bc
+         ae98a7ac  00100086
+         ae98a7b0  b646fbe0  [anon:libc_malloc]
+         ae98a7b4  00000002
+         ae98a7b8  00000001
+         ae98a7bc  00000003
+         ae98a7c0  000076bb
+         ae98a7c4  00000000
+         ae98a7c8  ae642000  [anon:libc_malloc]
+         ae98a7cc  00100086
+         ae98a7d0  000008ee
+         ae98a7d4  b2182500  [anon:libc_malloc]
+         ae98a7d8  00000002
+         ae98a7dc  b1a239d4  /dev/ashmem/dalvik-classes.dex extracted in memory from base.apk (deleted)
+         ........  ........
+    #07  ae98a8c0  00000000
+         ae98a8c4  b6f537c0  /system/lib/libart-compiler.so
+         ae98a8c8  ae642000  [anon:libc_malloc]
+         ae98a8cc  b6ae82df  /system/lib/libart.so (art::ThreadPoolWorker::Run()+266)
+    #08  ae98a8d0  00000000
+         ae98a8d4  b6ae81d5  /system/lib/libart.so (art::ThreadPoolWorker::Run())
+         ae98a8d8  b6479000  [anon:libc_malloc]
+         ae98a8dc  00000000
+         ae98a8e0  00000078
+         ae98a8e4  b6fceb84  /system/bin/linker
+         ae98a8e8  b2187958  [anon:libc_malloc]
+         ae98a8ec  b644dfd0  [anon:libc_malloc]
+         ae98a8f0  b6ae8971  /system/lib/libart.so (art::ThreadPoolWorker::Callback(void*))
+         ae98a8f4  b6ae89a9  /system/lib/libart.so (art::ThreadPoolWorker::Callback(void*)+56)
+    #09  ae98a8f8  00000000
+         ae98a8fc  ae689000  [anon:thread signal stack]
+         ae98a900  00000000
+         ae98a904  00002000
+         ae98a908  ae98a930  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a90c  ae98a970  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a910  ae98a930  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a914  b66c3551  /system/lib/libc.so (__pthread_start(void*)+32)
+    #10  ae98a918  b66c3531  /system/lib/libc.so (__pthread_start(void*))
+         ae98a91c  ae98a938  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a920  b66c3531  /system/lib/libc.so (__pthread_start(void*))
+         ae98a924  b669dc31  /system/lib/libc.so (__start_thread+8)
+    #11  ae98a928  ae98a978  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a92c  00000000
+         ae98a930  b643f930  [stack:14627]
+         ae98a934  ae88a930  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 1 (deleted)
+         ae98a938  0000393d
+         ae98a93c  00003922
+         ae98a940  00000000
+         ae98a944  ae88b000  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         ae98a948  000ff930
+         ae98a94c  00001000
+         ae98a950  00000000
+         ae98a954  00000000
+         ae98a958  00000000
+         ae98a95c  00000000
+         ae98a960  b6ae8971  /system/lib/libart.so (art::ThreadPoolWorker::Callback(void*))
+         ae98a964  b2187940  [anon:libc_malloc]
+
+memory near r0:
+    a9b42fe0 005b01ec 00000000 01f24100 600de066  ..[......A..f..`
+    a9b42ff0 41f00000 005b020e 00000000 02144500  ...A..[......E..
+    a9b43000 00000000 00000000 00000000 00000000  ................
+    a9b43010 00000000 00000000 00000000 00000000  ................
+    a9b43020 00000000 00000000 00000000 00000000  ................
+    a9b43030 00000000 00000000 00000000 00000000  ................
+    a9b43040 00000000 00000000 00000000 00000000  ................
+    a9b43050 00000000 00000000 00000000 00000000  ................
+    a9b43060 00000000 00000000 00000000 00000000  ................
+    a9b43070 00000000 00000000 00000000 00000000  ................
+    a9b43080 00000000 00000000 00000000 00000000  ................
+    a9b43090 00000000 00000000 00000000 00000000  ................
+    a9b430a0 00000000 00000000 00000000 00000000  ................
+    a9b430b0 00000000 00000000 00000000 00000000  ................
+    a9b430c0 00000000 00000000 00000000 00000000  ................
+    a9b430d0 00000000 00000000 00000000 00000000  ................
+
+memory near r1:
+    b6ba5ea0 78616c65 29286465 0000003d 78656e55  elaxed()=...Unex
+    b6ba5eb0 74636570 73206465 65746174 00003a5f  pected state_:..
+    b6ba5ec0 726f6620 00000020 61747320 003d6574   for ... state=.
+    b6ba5ed0 6d756e20 6e65705f 676e6964 6972775f   num_pending_wri
+    b6ba5ee0 73726574 0000003d 6d756e20 6e65705f  ters=... num_pen
+    b6ba5ef0 676e6964 6165725f 73726564 0000003d  ding_readers=...
+    b6ba5f00 646e6f43 6f697469 7261566e 6c626169  ConditionVariabl
+    b6ba5f10 7e3a3a65 646e6f43 6f697469 7261566e  e::~ConditionVar
+    b6ba5f20 6c626169 6f662065 00002072 6c616320  iable for .. cal
+    b6ba5f30 2064656c 68746977 00000020 69617720  led with ... wai
+    b6ba5f40 73726574 0000002e 65747566 6d632078  ters....futex cm
+    b6ba5f50 65722070 75657571 61662065 64656c69  p requeue failed
+    b6ba5f60 726f6620 00000020 63656843 6166206b   for ...Check fa
+    b6ba5f70 64656c69 6e28203a 775f6d75 6e656b6f  iled: (num_woken
+    b6ba5f80 203d3d20 7c202930 6e28207c 775f6d75   == 0) || (num_w
+    b6ba5f90 6e656b6f 203d3d20 00002931 6b636f4c  oken == 1)..Lock
+
+memory near r2:
+    a9b43288 00000000 00000000 00000000 00000000  ................
+    a9b43298 00000000 00000000 00000000 00000000  ................
+    a9b432a8 00000000 00000000 00000000 00000000  ................
+    a9b432b8 00000000 00000000 00000000 00000000  ................
+    a9b432c8 00000000 00000000 00000000 00000000  ................
+    a9b432d8 00000000 00000000 00000000 00000000  ................
+    a9b432e8 00000000 00000000 00000000 00000000  ................
+    a9b432f8 00000000 00000000 00000000 00000000  ................
+    a9b43308 00000000 00000000 00000000 00000000  ................
+    a9b43318 00000000 00000000 00000000 00000000  ................
+    a9b43328 00000000 00000000 00000000 00000000  ................
+    a9b43338 00000000 00000000 00000000 00000000  ................
+    a9b43348 00000000 00000000 00000000 00000000  ................
+    a9b43358 00000000 00000000 00000000 00000000  ................
+    a9b43368 00000000 00000000 00000000 00000000  ................
+    a9b43378 00000000 00000000 00000000 00000000  ................
+
+memory near r4:
+    a9b42e88 f8d920fe 47f0e14c bf48f7ff 1024f24d  . ..L..G..H.M.$.
+    a9b42e98 e14cf8d9 000247f0 bf62f7ff 00000000  ..L..G....b.....
+    a9b42ea8 a9b42eb8 a9b43000 a9b432aa b63083c0  .....0...2....0.
+    a9b42eb8 000003f2 00194890 00460000 00040000  .....H....F.....
+    a9b42ec8 7c060000 14000000 e152423a 05322ae9  ...|....:BR..*2.
+    a9b42ed8 00000020 00002105 00220500 025a0000   ....!...."...Z.
+    a9b42ee8 31291221 49f14139 00f95951 00000000  !.)19A.IQY......
+    a9b42ef8 00080000 0005e0ff 0cf00000 e000004e  ............N...
+    a9b42f08 0000000d 006c10f0 000de00a 13f00000  ......l.........
+    a9b42f18 000a0088 00000000 008e1700 100de015  ................
+    a9b42f28 17f00000 002000aa 00000000 00b01b00  ...... .........
+    a9b42f38 100de015 1bf00000 002000cc 00000000  .......... .....
+    a9b42f48 00d21f00 100de015 1ff00000 002000ee  .............. .
+    a9b42f58 00000000 01042500 300de02b 25f00000  .....%..+..0...%
+    a9b42f68 0037011e 00000000 01242900 600de043  ..7......)$.C..`
+    a9b42f78 29f00000 004f0140 00000000 01462d00  ...)@.O......-F.
+
+memory near r5:
+    ab8673d0 20c4189e ef0450c5 289e0c0f 22862906  ... .P.....(.)."
+    ab8673e0 ded57fe0 6a4e2862 2c0ff701 290620d6  ....b(Nj...,. .)
+    ab8673f0 ab8720e6 aab7e080 aab7e0a0 aab7e0c0  . ..............
+    ab867400 5c00f5ad c000f8dc 4de0e92d 9000b095  ...\....-..M....
+    ab867410 f8b9911d f1bcc000 f0400f00 2a008184  ..........@....*
+    ab867420 8142f000 f0002b00 f8dd813b 2d005080  ..B..+..;....P.-
+    ab867430 8132f000 0017000e 00294698 2c05f249  ..2......F).I..,
+    ab867440 f8d06808 f8d000f4 47f0e024 f3002800  .h......$..G.(..
+    ab867450 46bb8003 b92af000 f2490029 68082c05  ...F..*.).I..,.h
+    ab867460 00f4f8d0 e024f8d0 f10047f0 002932ff  ......$..G...2).
+    ab867470 1cfdf249 f8d06808 f8d000c0 47f0e024  I....h......$..G
+    ab867480 99009004 f6426889 448c4c78 1000f8dc  .....hB.xL.D....
+    ab867490 f0002900 28008153 8004f000 428a6802  .)..S..(.....h.B
+    ab8674a0 8156f040 ab14e9d0 ab08e9cd f2494641  @.V.........AFI.
+    ab8674b0 68082c05 00f4f8d0 e024f8d0 000547f0  .,.h......$..G..
+    ab8674c0 68409800 2c78f241 0c02f2c0 f8dc4484  ..@hA.x,.....D..
+
+memory near r7:
+    ab867128 005b01ec 00000000 01f24100 600de066  ..[......A..f..`
+    ab867138 41f00000 005b020e 00000000 02144500  ...A..[......E..
+    ab867148 600de066 45f00000 00710232 00000000  f..`...E2.q.....
+    ab867158 02384900 600de07c 49f00000 00710254  .I8.|..`...IT.q.
+    ab867168 00000000 025a4d00 600de07c 4df00000  .....MZ.|..`...M
+    ab867178 e0870278 0000600d 029450f0 00000087  x....`...P......
+    ab867188 54000000 e091029a 0000600d 02b654f0  ...T.....`...T..
+    ab867198 00000087 58000000 e09102bc 0000600d  .......X.....`..
+    ab8671a8 02d858f0 00000087 5c000000 e09102de  .X.........\....
+    ab8671b8 0000600d 02fa5cf0 00000087 60000000  .`...\.........`
+    ab8671c8 e0910300 0000600d 031c60f0 00000087  .....`...`......
+    ab8671d8 64000000 e0910322 0000600d 033e64f0  ...d"....`...d>.
+    ab8671e8 600de09b 67f00000 e09b034a 0000600d  ...`...gJ....`..
+    ab8671f8 035a69f0 d00de09b 6ff00000 e0a4038e  .iZ........o....
+    ab867208 0000d00d 03bc74f0 d00de0a4 7bf00000  .....t.........{
+    ab867218 e0a40404 0000d00d 043a80f0 d00de0a4  ..........:.....
+
+memory near r8:
+    ab8e7f78 aea07ff8 0689941c ab763ed8 ab8ffa00  .........>v.....
+    ab8e7f88 ab8ee0c8 00000001 aea08988 17b2d504  ................
+    ab8e7f98 00000000 00000000 aabf8a50 00000000  ........P.......
+    ab8e7fa8 aea08dc0 16ca6e1f ab46df48 00000000  .....n..H.F.....
+    ab8e7fb8 ab52c990 00000001 aea09168 1394751e  ..R.....h....u..
+    ab8e7fc8 ab86eb08 ab8f3d18 ab8f6bf0 00000001  .....=...k......
+    ab8e7fd8 aea093d8 212b2f07 ab8e8f88 ab86e820  ...../+!.... ...
+    ab8e7fe8 ab8e6048 00000001 aea09418 14b2dea5  H`..............
+    ab8e7ff8 aab6b0c8 ab6a42c8 ab8f7100 00000001  .....Bj..q......
+    ab8e8008 aea09430 16f584c4 ab86dd70 ab774e20  0.......p... Nw.
+    ab8e8018 ab429a00 00000001 aea096b8 18b94022  ..B........."@..
+    ab8e8028 00000000 00000000 ab3e9d30 00000001  ........0.>.....
+    ab8e8038 aea09718 1f7e7b80 aab63830 ab7637a0  .....{~.08...7v.
+    ab8e8048 ab8e63d8 00000001 aea095e8 0200c2f0  .c..............
+    ab8e8058 abb63a20 abb63588 ab8eda08 00000000   :...5..........
+    ab8e8068 aea0b690 343c4963 ab6b81b8 ab871340  ....cI<4..k.@...
+
+memory near r9:
+    b2182788 000002b8 aab6b098 ab8eee90 00000270  ............p...
+    b2182798 b63083c0 00000000 00000000 00000000  ..0.............
+    b21827a8 00000021 00000018 b21877c0 00000021  !........w..!...
+    b21827b8 00000018 b21877e0 00000021 00000018  .....w..!.......
+    b21827c8 b2187800 00000021 00000018 b2187820  .x..!....... x..
+    b21827d8 b644dd90 b644ddc0 b644ddf0 b644de20  ..D...D...D. .D.
+    b21827e8 ab86fa80 ac195fb0 00000bd5 ab6b4800  ....._.......Hk.
+    b21827f8 abb63570 00000c19 ab76d3c8 abb63a38  p5........v.8:..
+    b2182808 00000c01 ab52c3a8 abb63288 00000ba6  ......R..2......
+    b2182818 b63083c0 00000000 00000000 00000000  ..0.............
+    b2182828 00000021 00000014 b2187840 00000021  !.......@x..!...
+    b2182838 00000014 b2187860 00000021 00000014  ....`x..!.......
+    b2182848 b2187880 00000021 00000014 b21878a0  .x..!........x..
+    b2182858 b644de50 b644de80 b644deb0 b644dee0  P.D...D...D...D.
+    b2182868 ab3e8518 abb65760 00000270 aab6a3f0  ..>.`W..p.......
+    b2182878 ab8eef20 0000029c ab870ef0 abab9250   ...........P...
+
+memory near sl:
+    ae98a3a0 aad14348 b21872e0 aad141e8 ae98a3b8  HC...r...A......
+    ae98a3b0 ac39a600 0000061c 00000000 00000000  ..9.............
+    ae98a3c0 ab867000 000003f2 00000000 00000000  .p..............
+    ae98a3d0 ab87c0a0 00000000 00000000 00000000  ................
+    ae98a3e0 00000000 00000000 00000000 ae642000  ............. d.
+    ae98a3f0 abaad2b0 abaad2b0 abaad2b4 abaad2b4  ................
+    ae98a400 00000000 00000002 00000003 ab867000  .............p..
+    ae98a410 ab8673f2 ab8673f2 0000000e 0000000e  .s...s..........
+    ae98a420 aad16210 ae98a5b8 00000040 00000038  .b......@...8...
+    ae98a430 aad18308 ae98a5b8 00000080 00000073  ............s...
+    ae98a440 aad18050 00000038 b6f54b68 ac39a600  P...8...hK....9.
+    ae98a450 ac39ac1c ac39ac1c 0000061c 00000000  ..9...9.........
+    ae98a460 ab183480 ae98a5b8 00000010 00000000  .4..............
+    ae98a470 ab185290 ae98a464 ae98a5b8 00000040  .R..d.......@...
+    ae98a480 00000000 ab186d88 ae98a5b8 00000010  .....m..........
+    ae98a490 00000000 ab1863f8 ae98a5b8 00000010  .....c..........
+
+memory near fp:
+    b21827f0 00000bd5 ab6b4800 abb63570 00000c19  .....Hk.p5......
+    b2182800 ab76d3c8 abb63a38 00000c01 ab52c3a8  ..v.8:........R.
+    b2182810 abb63288 00000ba6 b63083c0 00000000  .2........0.....
+    b2182820 00000000 00000000 00000021 00000014  ........!.......
+    b2182830 b2187840 00000021 00000014 b2187860  @x..!.......`x..
+    b2182840 00000021 00000014 b2187880 00000021  !........x..!...
+    b2182850 00000014 b21878a0 b644de50 b644de80  .....x..P.D...D.
+    b2182860 b644deb0 b644dee0 ab3e8518 abb65760  ..D...D...>.`W..
+    b2182870 00000270 aab6a3f0 ab8eef20 0000029c  p....... .......
+    b2182880 ab870ef0 abab9250 000002df aabed4c8  ....P...........
+    b2182890 ad45cd18 0000025f b63083c0 00000000  ..E._.....0.....
+    b21828a0 00000000 00000000 00000021 00000016  ........!.......
+    b21828b0 b21878c0 00000021 00000016 b21878e0  .x..!........x..
+    b21828c0 00000021 00000016 b2187900 00000021  !........y..!...
+    b21828d0 00000016 b2187920 b644df10 b644df40  .... y....D.@.D.
+    b21828e0 b644df70 b644dfa0 b21828ec 00000000  p.D...D..(......
+
+memory near ip:
+    b6f6889c b6ad3df5 b68aa701 b6adbff5 b68c48e1  .=...........H..
+    b6f688ac b68c6b7d b6a3c921 b6880f6d b6881af9  }k..!...m.......
+    b6f688bc b688196d b6a33cd9 b6ad4691 b6a3b439  m....<...F..9...
+    b6f688cc b687c7f9 b68f7859 b669a6b5 b68ebd45  ....Yx....i.E...
+    b6f688dc b68ec395 b68ec219 b6fe068d b6d83751  ............Q7..
+    b6f688ec b6b8f0a1 b669df71 b669fca9 b66bbedd  ....q.i...i...k.
+    b6f688fc b66bc97b b66bbf75 b66bc005 b66bb6b1  {.k.u.k...k...k.
+    b6f6890c b674f4ad b674f561 b6fdb1cd b6d838b1  ..t.a.t......8..
+    b6f6891c b6d837c9 b6d8392d b6d83835 b6d83935  .7..-9..58..59..
+    b6f6892c b68c66b9 b6afcead b6876ded b6b902fd  .f.......m......
+    b6f6893c b6aba3d1 b687d7ed b687d6e5 b687d061  ............a...
+    b6f6894c b6d8f185 b687c7f9 b6b12639 b6b12569  ........9&..i%..
+    b6f6895c b6b05705 b6b13881 b6b195f1 b6b125c1  .W...8.......%..
+    b6f6896c b6b19dc9 b6d07ee9 b6b01f6d b6b00f95  .....~..m.......
+    b6f6897c b6ada2d5 b68ee0a5 b68ee1bd b6af3665  ............e6..
+    b6f6898c b6938bf9 b6a38c99 b68c1a99 b68b0089  ................
+
+memory near sp:
+    ae98a298 00000003 a9b42ea8 00000003 000003f2  ................
+    ae98a2a8 ab867000 ab8e7f98 b21827a8 b6da2c0d  .p.......'...,..
+    ae98a2b8 a9b42878 ae642000 b644de20 b218280c  x(... d. .D..(..
+    ae98a2c8 16bed215 00000064 ae98a3e0 00000000  ....d...........
+    ae98a2d8 16bed215 ae98a3c0 00000000 ae98a2d8  ................
+    ae98a2e8 a9b42878 a9b42820 00000000 b2182500  x(.. (.......%..
+    ae98a2f8 00000000 00000000 00000000 00000060  ............`...
+    ae98a308 00000000 b6cab075 00000000 00000000  ....u...........
+    ae98a318 ae98a5d8 ae98a3e0 ae98a448 ae98a40c  ........H.......
+    ae98a328 00000000 00000000 ae98a3c8 ae98a3d8  ................
+    ae98a338 ab87c0a0 b6e3a4cf 00008de0 00000000  ................
+    ae98a348 ae98a3e0 ae98a3b8 ae98a3c0 ae98a3c8  ................
+    ae98a358 ae98a3d0 ae98a3d8 00000080 ae98a3e0  ................
+    ae98a368 ae98a3ec 00000003 00008de0 00000000  ................
+    ae98a378 00000060 ae98a5d8 b2182500 aad14130  `........%..0A..
+    ae98a388 aad14148 aad14160 aad141d0 aad14298  HA..`A...A...B..
+
+code around pc:
+    b6da2c00 e71560a9 4631b1f0 fa5ef111 198219bd  .`....1F..^.....
+    b6da2c10 0000e9c4 60a242af af31f43f 783bb110  .....B.`?.1...;x
+    b6da2c20 68607003 30013701 606042af e726d1f6  .p`h.7.0.B``..&.
+    b6da2c30 f8cd465f 465db01c 2010e7c5 ee74f6f9  _F....]F... ..t.
+    b6da2c40 e70f4604 f6f94630 e7dfee70 3404e96d  .F..0F..p...m..4
+    b6da2c50 460c4b0d 5e02e9cd 7594f500 681b447b  .K.F...^...u{D.h
+    b6da2c60 46017818 4909b130 68094479 f6fa6808  .x.F0..IyD.h.h..
+    b6da2c70 4601e842 46224628 5e02e9dd 3400e9dd  B..F(F"F...^...4
+    b6da2c80 f7ffb004 bf00be41 001c571c 001c5714  ....A....W...W..
+    b6da2c90 3404e96d 460c4b0d 5e02e9cd 750af500  m..4.K.F...^...u
+    b6da2ca0 681b447b 46017818 4909b130 68094479  {D.h.x.F0..IyD.h
+    b6da2cb0 f6fa6808 4601e820 46224628 5e02e9dd  .h.. ..F(F"F...^
+    b6da2cc0 3400e9dd f7ffb004 bf00be1f 001c56d8  ...4.........V..
+    b6da2cd0 001c56d0 3404e96d 460c4b0d 5e02e9cd  .V..m..4.K.F...^
+    b6da2ce0 752af500 681b447b 46017818 4909b130  ..*u{D.h.x.F0..I
+    b6da2cf0 68094479 f6f96808 4601effe 46224628  yD.h.h.....F(F"F
+
+memory map: (fault address prefixed with --->)
+    12c00000-15200fff rw-         0   2601000  /dev/ashmem/dalvik-main space (deleted)
+    15201000-32bfffff ---   2601000  1d9ff000  /dev/ashmem/dalvik-main space (deleted)
+    32c00000-32c00fff rw-         0      1000  /dev/ashmem/dalvik-main space 1 (deleted)
+    32c01000-52bfffff ---      1000  1ffff000  /dev/ashmem/dalvik-main space 1 (deleted)
+    70a01000-714c8fff rw-         0    ac8000  /data/dalvik-cache/arm/system@framework@boot.art
+    714c9000-7525afff r--         0   3d92000  /data/dalvik-cache/arm/system@framework@boot.oat
+    7525b000-7525bfff rw-   3d92000      1000  /data/dalvik-cache/arm/system@framework@boot.oat
+    7525c000-75349fff rw-         0     ee000  /dev/ashmem/dalvik-non moving space (deleted)
+    7534a000-7925bfff ---     ee000   3f12000  /dev/ashmem/dalvik-non moving space (deleted)
+--->a9b40000-aab3ffff rw-   1000000   1000000  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+    aab40000-ae67ffff rw-         0   3b40000  [anon:libc_malloc]
+    ae680000-ae681fff rw-         0      2000  /dev/ashmem/dalvik-indirect ref table (deleted)
+    ae682000-ae682fff ---         0      1000
+    ae683000-ae684fff rw-         0      2000  [stack:14655]
+    ae685000-ae685fff ---         0      1000
+    ae686000-ae687fff rw-         0      2000  [stack:14654]
+    ae688000-ae688fff ---         0      1000
+    ae689000-ae68afff rw-         0      2000  [anon:thread signal stack]
+    ae68b000-ae78afff rw-         0    100000  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 2 (deleted)
+    ae78b000-ae88afff rw-         0    100000  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 1 (deleted)
+    ae88b000-ae98afff rw-         0    100000  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+    ae98b000-af98afff rw-         0   1000000  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+    af98b000-af9aefff rw-         0     24000  /dev/ashmem/dalvik-large object space allocation (deleted)
+    af9af000-af9e0fff rw-         0     32000  /dev/ashmem/dalvik-large object space allocation (deleted)
+    af9e1000-afa0dfff rw-         0     2d000  /dev/ashmem/dalvik-large object space allocation (deleted)
+    afa0e000-afa45fff rw-         0     38000  /dev/ashmem/dalvik-large object space allocation (deleted)
+    afa46000-afa82fff rw-         0     3d000  /dev/ashmem/dalvik-large object space allocation (deleted)
+    afa83000-b0204fff rw-         0    782000  /dev/ashmem/dalvik-classes5.dex extracted in memory from base.apk:classes5.dex (deleted)
+    b0205000-b0b7ffff rw-         0    97b000  /dev/ashmem/dalvik-classes3.dex extracted in memory from base.apk:classes3.dex (deleted)
+    b0b80000-b0bfffff rw-         0     80000  [anon:libc_malloc]
+    b0c09000-b0c3bfff rw-         0     33000  /dev/ashmem/dalvik-large object space allocation (deleted)
+    b0c3c000-b153ffff rw-         0    904000  /dev/ashmem/dalvik-classes2.dex extracted in memory from base.apk:classes2.dex (deleted)
+    b1540000-b18bffff rw-         0    380000  [anon:libc_malloc]
+    b18ef000-b210afff rw-         0    81c000  /dev/ashmem/dalvik-classes.dex extracted in memory from base.apk (deleted)
+    b2112000-b2151fff rw-         0     40000  /dev/ashmem/dalvik-large object space allocation (deleted)
+    b2152000-b217ffff rw-         0     2e000  /dev/ashmem/dalvik-large object space allocation (deleted)
+    b2180000-b21bffff rw-         0     40000  [anon:libc_malloc]
+    b21c1000-b2288fff rw-         0     c8000  /dev/ashmem/dalvik-indirect ref table (deleted)
+    b2289000-b2350fff rw-         0     c8000  /dev/ashmem/dalvik-indirect ref table (deleted)
+    b2351000-b2b51fff rw-         0    801000  /dev/ashmem/dalvik-live stack (deleted)
+    b2b52000-b3352fff rw-         0    801000  /dev/ashmem/dalvik-allocation stack (deleted)
+    b3353000-b3392fff rw-         0     40000  /dev/ashmem/dalvik-mark stack (deleted)
+    b3393000-b405ffff rw-         0    ccd000  /dev/ashmem/dalvik-card table (deleted)
+    b4060000-b407ffff rw-         0     20000  /dev/ashmem/dalvik-large marked objects (deleted)
+    b4080000-b409ffff rw-         0     20000  /dev/ashmem/dalvik-large live objects (deleted)
+    b40a0000-b489ffff rw-         0    800000  /dev/ashmem/dalvik-allocspace main rosalloc space 1 mark-bitmap 2 (deleted)
+    b48a0000-b509ffff rw-         0    800000  /dev/ashmem/dalvik-allocspace main rosalloc space 1 live-bitmap 2 (deleted)
+    b50a0000-b50bffff rw-         0     20000  /dev/ashmem/dalvik-rosalloc page map (deleted)
+    b50c0000-b58bffff rw-         0    800000  /dev/ashmem/dalvik-allocspace main rosalloc space mark-bitmap 1 (deleted)
+    b58c0000-b60bffff rw-         0    800000  /dev/ashmem/dalvik-allocspace main rosalloc space live-bitmap 1 (deleted)
+    b60c0000-b60dffff rw-         0     20000  /dev/ashmem/dalvik-rosalloc page map (deleted)
+    b60e0000-b61dffff rw-         0    100000  /dev/ashmem/dalvik-allocspace zygote / non moving space mark-bitmap 0 (deleted)
+    b61e0000-b62dffff rw-         0    100000  /dev/ashmem/dalvik-allocspace zygote / non moving space live-bitmap 0 (deleted)
+    b62e0000-b62fffff r--    ac8000     20000  /data/dalvik-cache/arm/system@framework@boot.art
+    b6300000-b633ffff rw-         0     40000  [anon:libc_malloc]
+    b6341000-b6341fff ---         0      1000
+    b6342000-b643ffff rw-         0     fe000  [stack:14627]
+    b6440000-b64bffff rw-         0     80000  [anon:libc_malloc]
+    b64d0000-b64d1fff rw-         0      2000  /dev/ashmem/dalvik-indirect ref table (deleted)
+    b64d2000-b64d3fff rw-         0      2000  /dev/ashmem/dalvik-indirect ref table (deleted)
+    b64d4000-b64d5fff rw-         0      2000  /dev/ashmem/dalvik-indirect ref table (deleted)
+    b64d6000-b64d6fff ---         0      1000
+    b64d7000-b64d8fff rw-         0      2000  [anon:thread signal stack]
+    b64d9000-b64dcfff r-x         0      4000  /system/lib/libnetd_client.so (BuildId: eeda199d4dc44c1602057b5387fe7e9a)
+    b64dd000-b64ddfff r--      3000      1000  /system/lib/libnetd_client.so
+    b64de000-b64defff rw-      4000      1000  /system/lib/libnetd_client.so
+    b64e0000-b64fffff r--         0     20000  /dev/__properties__
+    b6500000-b650ffff r-x         0     10000  /system/lib/libunwind.so (BuildId: 1da9ef345e24ad73f166f8daffc32bc4)
+    b6510000-b6510fff r--      f000      1000  /system/lib/libunwind.so
+    b6511000-b6511fff rw-     10000      1000  /system/lib/libunwind.so
+    b6512000-b6557fff rw-         0     46000
+    b6558000-b6560fff r-x         0      9000  /system/lib/libbase.so (BuildId: 43485591236b489ec8cb26a8d13d0163)
+    b6561000-b6561fff r--      8000      1000  /system/lib/libbase.so
+    b6562000-b6562fff rw-      9000      1000  /system/lib/libbase.so
+    b6564000-b657bfff r-x         0     18000  /system/lib/libutils.so (BuildId: c4be6d78a29862a448584be81e19cea6)
+    b657c000-b657cfff ---         0      1000
+    b657d000-b657dfff r--     18000      1000  /system/lib/libutils.so
+    b657e000-b657efff rw-     19000      1000  /system/lib/libutils.so
+    b657f000-b6587fff r-x         0      9000  /system/lib/libbacktrace.so (BuildId: 8976a85ba8ee294ec15b2ddc98fccad8)
+    b6588000-b6588fff r--      8000      1000  /system/lib/libbacktrace.so
+    b6589000-b6589fff rw-      9000      1000  /system/lib/libbacktrace.so
+    b658a000-b658cfff r-x         0      3000  /system/lib/libsigchain.so (BuildId: 14593cb5f3c2321d77a89ac7c9b0cb34)
+    b658d000-b658dfff r--      2000      1000  /system/lib/libsigchain.so
+    b658e000-b658efff rw-      3000      1000  /system/lib/libsigchain.so
+    b658f000-b6592fff r-x         0      4000  /system/lib/libnativebridge.so (BuildId: 79df5ae7a7ec4d10ccd7b58d121b01e8)
+    b6593000-b6593fff r--      3000      1000  /system/lib/libnativebridge.so
+    b6594000-b6594fff rw-      4000      1000  /system/lib/libnativebridge.so
+    b6595000-b6595fff rw-         0      1000  /dev/ashmem/dalvik-classes4.dex extracted in memory from base.apk:classes4.dex (deleted)
+    b6596000-b659cfff r-x         0      7000  /system/lib/libnativehelper.so (BuildId: 5092130f88570fb130313f557cda280f)
+    b659d000-b659dfff r--      6000      1000  /system/lib/libnativehelper.so
+    b659e000-b659efff rw-      7000      1000  /system/lib/libnativehelper.so
+    b659f000-b659ffff rw-         0      1000  /dev/ashmem/dalvik-mark sweep sweep array free buffer (deleted)
+    b65a0000-b664bfff r-x         0     ac000  /system/lib/libvixl.so (BuildId: ced02ab6430d911dfda958a3ac7898d4) (load base 0x1000)
+    b664c000-b664efff r--     ab000      3000  /system/lib/libvixl.so
+    b664f000-b664ffff rw-     ae000      1000  /system/lib/libvixl.so
+    b6650000-b6654fff rw-         0      5000
+    b6655000-b6655fff r--         0      1000  /data/dalvik-cache/arm/system@framework@boot.oat
+    b6656000-b665dfff r-x         0      8000  /system/lib/liblog.so (BuildId: 3f9c6d7ff7c116f9e6338c47c1c6671d)
+    b665e000-b665efff r--      7000      1000  /system/lib/liblog.so
+    b665f000-b665ffff rw-      8000      1000  /system/lib/liblog.so
+    b6660000-b6660fff rw-         0      1000  /dev/ashmem/dalvik-mark sweep sweep array free buffer (deleted)
+    b6661000-b6680fff r-x         0     20000  /system/lib/libm.so (BuildId: 9d9b37408836a376eb7546b9b6f49310)
+    b6681000-b6681fff r--     1f000      1000  /system/lib/libm.so
+    b6682000-b6682fff rw-     20000      1000  /system/lib/libm.so
+    b6683000-b6683fff rw-         0      1000  [anon:linker_alloc_vector]
+    b6684000-b66f6fff r-x         0     73000  /system/lib/libc.so (BuildId: 331befaf28cce25cb0c7d80da2ae36f3)
+    b66f7000-b66fafff r--     72000      4000  /system/lib/libc.so
+    b66fb000-b66fdfff rw-     76000      3000  /system/lib/libc.so
+    b66fe000-b6707fff rw-         0      a000
+    b6708000-b6708fff rw-         0      1000  [anon:linker_alloc_vector]
+    b6709000-b6790fff r-x         0     88000  /system/lib/libc++.so (BuildId: b6909769b3811e07488a34f21aea79ca) (load base 0x2000)
+    b6791000-b6791fff ---         0      1000
+    b6792000-b6795fff r--     88000      4000  /system/lib/libc++.so
+    b6796000-b6796fff rw-     8c000      1000  /system/lib/libc++.so
+    b6797000-b6797fff rw-         0      1000
+    b6798000-b6798fff rw-         0      1000  /dev/ashmem/dalvik-mark sweep sweep array free buffer (deleted)
+    b6799000-b6be5fff r-x         0    44d000  /system/lib/libart.so (BuildId: 8a45de31b5c989b8a3dd7db47359a3c8) (load base 0xe000)
+    b6be6000-b6be6fff ---         0      1000
+    b6be7000-b6bf0fff r--    44d000      a000  /system/lib/libart.so
+    b6bf1000-b6bf1fff rw-    457000      1000  /system/lib/libart.so
+    b6bf2000-b6bf3fff rw-         0      2000
+    b6bf4000-b6bf4fff rw-         0      1000  [anon:linker_alloc_vector]
+    b6bf5000-b6f3dfff r-x         0    349000  /system/lib/libart-compiler.so (BuildId: c4bd1389c155afcce2e0e24da3b801d3) (load base 0x25000)
+    b6f3e000-b6f68fff r--    348000     2b000  /system/lib/libart-compiler.so
+    b6f69000-b6f69fff rw-    373000      1000  /system/lib/libart-compiler.so
+    b6f6a000-b6f70fff rw-         0      7000
+    b6f71000-b6f71fff r--         0      1000
+    b6f72000-b6f80fff r-x         0      f000  /system/lib/libcutils.so (BuildId: bb66535cfbbae12145cdf63151eea437)
+    b6f81000-b6f81fff r--      e000      1000  /system/lib/libcutils.so
+    b6f82000-b6f82fff rw-      f000      1000  /system/lib/libcutils.so
+    b6f83000-b6f83fff rw-         0      1000  [anon:linker_alloc_vector]
+    b6f84000-b6f85fff r--         0      2000  [anon:linker_alloc]
+    b6f86000-b6f86fff rw-         0      1000  [anon:linker_alloc]
+    b6f87000-b6f87fff rw-         0      1000  [anon:linker_alloc_vector]
+    b6f88000-b6f88fff rw-         0      1000  [anon:linker_alloc_32]
+    b6f89000-b6f89fff r--         0      1000  [anon:linker_alloc]
+    b6f8a000-b6fa9fff r--         0     20000  /dev/__properties__
+    b6faa000-b6faafff r--         0      1000
+    b6fab000-b6fabfff ---         0      1000
+    b6fac000-b6fadfff rw-         0      2000  [stack:14626]
+    b6fae000-b6faefff r-x         0      1000  [sigpage]
+    b6faf000-b6fcbfff r-x         0     1d000  /system/bin/linker (BuildId: 1071efb0da027bcc733243f1a7d5c0c9)
+    b6fcc000-b6fccfff r--     1c000      1000  /system/bin/linker
+    b6fcd000-b6fcefff rw-     1d000      2000  /system/bin/linker
+    b6fcf000-b6fd0fff rw-         0      2000
+    b6fd1000-b6febfff r-x         0     1b000  /system/bin/dex2oat (BuildId: aebf6c965c68d441e1d1957bd916d81d)
+    b6fec000-b6fecfff r--     1a000      1000  /system/bin/dex2oat
+    b6fed000-b6fedfff rw-         0      1000
+    be9bc000-be9dcfff rw-         0     21000
+    ffff0000-ffff0fff r-x         0      1000  [vectors]
+--------- tail end of log main
+04-02 01:27:47.632 14626 14654 W dex2oat : Compilation of int com.tencent.mobileqq.msf.sdk.utils.MonitorSocketInputStream.read(byte[], int, int) took 262.318ms
+04-02 01:27:47.978 14626 14626 I dex2oat : Skipping compilation of boolean com.tencent.mobileqq.pluginsdk.PluginBaseInfoHelper$Base64Helper$c.a(byte[], int, int, boolean): it contains a non natural loop
+04-02 01:27:48.305 14626 14626 I libc    : Another thread contacted debuggerd first; not contacting debuggerd.
+04-02 01:27:48.305 14626 14655 I libc    : Another thread contacted debuggerd first; not contacting debuggerd.
+04-02 01:27:48.306 14626 14654 I libc    : Another thread contacted debuggerd first; not contacting debuggerd.
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 14626, tid: 14626, name: main  >>> /system/bin/dex2oat <<<
+    r0 b6fce378  r1 00000080  r2 00000002  r3 00000000
+    r4 00000000  r5 0000000b  r6 00000080  r7 000000f0
+    r8 b6fadb64  r9 00000000  sl b6fadb68  fp b6fceb84
+    ip b6fadb40  sp b6fadb30  lr b6fbec21  pc b6fbfbb8  cpsr 000b0010
+    d0  0000000000000008  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  0000000000003922  d5  88880000cccc0000
+    d6  000003e800110000  d7  408c200000000000
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 0000000000000000  d17 0000000000000000
+    d18 6465746361746e6f  d19 6567677562656420
+    d20 7473726966206472  d21 6f6320746f6e203b
+    d22 676e69746361746e  d23 6567677562656420
+    d24 2000000010000000  d25 8000000040000000
+    d26 00000140000000a0  d27 0000010000000080
+    d28 2222000011110000  d29 8888000044440000
+    d30 0222000001110000  d31 0888000004440000
+    scr 80000011
+
+backtrace:
+    #00 pc 00010bb8  /system/bin/linker (__dl_syscall+28)
+    #01 pc 0000fc1d  /system/bin/linker (__dl__ZL33__pthread_mutex_lock_with_timeoutP24pthread_mutex_internal_tPK8timespeci+504)
+    #02 pc 0000fced  /system/bin/linker (__dl_pthread_mutex_lock+26)
+    #03 pc 000017d9  /system/bin/linker (__dl__ZL24debuggerd_signal_handleriP7siginfoPv+376)
+    #04 pc 00010b90  /system/bin/linker
+
+stack:
+         b6fadaf0  b6fadb80  [stack:14626]
+         b6fadaf4  b6fba639  /system/bin/linker (__dl__Z11out_vformatI18BufferOutputStreamEvRT_PKcSt9__va_list+736)
+         b6fadaf8  00000078
+         b6fadafc  00000000
+         b6fadb00  00000000
+         b6fadb04  00000000
+         b6fadb08  b6fadb18  [stack:14626]
+         b6fadb0c  00000000
+         b6fadb10  b6fca507  /system/bin/linker
+         b6fadb14  b6fbfdc7  /system/bin/linker (__dl__ZN11ScopedTraceC2EPKc+18)
+         b6fadb18  00000000
+         b6fadb1c  00000000
+         b6fadb20  b6fce378  /system/bin/linker
+         b6fadb24  00000000
+         b6fadb28  00000000
+         b6fadb2c  00000000
+    #00  b6fadb30  b6fce378  /system/bin/linker
+         b6fadb34  00000002
+         b6fadb38  00000000
+         b6fadb3c  00000000
+    #01  b6fadb40  00000000
+         b6fadb44  00000000
+         b6fadb48  0000000b
+         b6fadb4c  00000080
+         b6fadb50  00000000
+         b6fadb54  00000000
+         b6fadb58  b6fc6e8d  /system/bin/linker
+         b6fadb5c  00000001
+         b6fadb60  00000007
+         b6fadb64  0001dbf8
+         b6fadb68  b6fa0001  /dev/__properties__
+         b6fadb6c  b6fadbc4  [stack:14626]
+         b6fadb70  be9dbe60
+         b6fadb74  00000001
+         b6fadb78  b6fce378  /system/bin/linker
+         b6fadb7c  00003922
+         ........  ........
+    #02  b6fadb98  b6fce378  /system/bin/linker
+         b6fadb9c  0001d718
+         b6fadba0  b6fadc90  [stack:14626]
+         b6fadba4  b6fb07dd  /system/bin/linker (__dl__ZL24debuggerd_signal_handleriP7siginfoPv+380)
+    #03  b6fadba8  b6fc6dec  /system/bin/linker
+         b6fadbac  b6fadbd8  [stack:14626]
+         b6fadbb0  b6fadbf8  [stack:14626]
+         b6fadbb4  00003922
+         b6fadbb8  b6fadbc4  [stack:14626]
+         b6fadbbc  00000000
+         b6fadbc0  00000000
+         b6fadbc4  6e69616d
+         b6fadbc8  00000000
+         b6fadbcc  00000000
+         b6fadbd0  00000000
+         b6fadbd4  00000000
+         b6fadbd8  6f63202c
+         b6fadbdc  32206564  /dev/ashmem/dalvik-main space (deleted)
+         b6fadbe0  1c000000  /dev/ashmem/dalvik-main space (deleted)
+         b6fadbe4  b6fbfb94  /system/bin/linker (__dl___restore_rt)
+         ........  ........
+    #04  b6fadc90  00000007
+         b6fadc94  00000000
+         b6fadc98  00000002
+         b6fadc9c  a9b432b8  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         b6fadca0  00000000
+         b6fadca4  00000000
+         b6fadca8  00000000
+         b6fadcac  00000000
+         b6fadcb0  00000000
+         b6fadcb4  00000000
+         b6fadcb8  00000000
+         b6fadcbc  00000000
+         b6fadcc0  00000000
+         b6fadcc4  00000000
+         b6fadcc8  00000000
+         b6fadccc  00000000
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 14626, tid: 14627, name: dex2oat watch d  >>> /system/bin/dex2oat <<<
+    r0 b645f0a8  r1 00000080  r2 00000000  r3 b643f8b8
+    r4 b645f0a4  r5 b645f0a4  r6 b645f0a8  r7 000000f0
+    r8 00000000  r9 00000080  sl b643f8b8  fp b6fdb579
+    ip b643f890  sp b643f880  lr b66c336f  pc b669b638  cpsr 00010010
+    d0  0000000000000000  d1  0000000000000000
+    d2  ffffffffffffffff  d3  ffffffffffffffff
+    d4  0000004000000001  d5  0000000100000002
+    d6  000000400000001e  d7  0000000100000002
+    d8  4056800000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 0000000000000000  d17 0000000000000000
+    d18 0000271000000005  d19 0000003c00000258
+    d20 2d7465732d6e6f69  d21 3d746e6169726176
+    d22 2d2d20746961726b  d23 7463757274736e69
+    d24 0000004000000004  d25 000000007ff80000
+    d26 0000004000000003  d27 0000000100000002
+    d28 0000004000000004  d29 0000000100000002
+    d30 0000004000000005  d31 000000000000ff00
+    scr 00000000
+
+backtrace:
+    #00 pc 00017638  /system/lib/libc.so (syscall+28)
+    #01 pc 0003f36b  /system/lib/libc.so (__pthread_cond_timedwait_relative(pthread_cond_internal_t*, pthread_mutex_t*, timespec const*)+56)
+    #02 pc 0003f429  /system/lib/libc.so (pthread_cond_timedwait+28)
+    #03 pc 0000a5e1  /system/bin/dex2oat
+    #04 pc 0003f54f  /system/lib/libc.so (__pthread_start(void*)+30)
+    #05 pc 00019c2f  /system/lib/libc.so (__start_thread+6)
+
+stack:
+         b643f840  b66feec0
+         b643f844  b643f980  [stack:14627]
+         b643f848  b66feec0
+         b643f84c  b643f930  [stack:14627]
+         b643f850  00000000
+         b643f854  00000000
+         b643f858  00000000
+         b643f85c  00000000
+         b643f860  00000000
+         b643f864  00000000
+         b643f868  00000000
+         b643f86c  00000000
+         b643f870  00000000
+         b643f874  11965f91
+         b643f878  b643f8a4  [stack:14627]
+         b643f87c  b66feec0
+    #00  b643f880  b645f0a8  [anon:libc_malloc]
+         b643f884  b643f980  [stack:14627]
+         b643f888  b645f0a4  [anon:libc_malloc]
+         b643f88c  00000000
+    #01  b643f890  b643f8b8  [stack:14627]
+         b643f894  b645f0a4  [anon:libc_malloc]
+         b643f898  b645f0a4  [anon:libc_malloc]
+         b643f89c  b645f0a8  [anon:libc_malloc]
+         b643f8a0  b645f0a4  [anon:libc_malloc]
+         b643f8a4  b645f0a0  [anon:libc_malloc]
+         b643f8a8  b66feec0
+         b643f8ac  b645f0c4  [anon:libc_malloc]
+         b643f8b0  b6341000
+         b643f8b4  b66c342d  /system/lib/libc.so (pthread_cond_timedwait+32)
+    #02  b643f8b8  00000239
+         b643f8bc  3b9abdff  /dev/ashmem/dalvik-main space 1 (deleted)
+         b643f8c0  b645f0a4  [anon:libc_malloc]
+         b643f8c4  b643f8dc  [stack:14627]
+         b643f8c8  b645f0a8  [anon:libc_malloc]
+         b643f8cc  b6fdb5e5  /system/bin/dex2oat
+    #03  b643f8d0  00000000
+         b643f8d4  b643f8dc  [stack:14627]
+         b643f8d8  00000000
+         b643f8dc  56feb1b7
+         b643f8e0  07c6b975
+         b643f8e4  b64d6000
+         b643f8e8  b643f930  [stack:14627]
+         b643f8ec  00000078
+         b643f8f0  b66ee117  /system/lib/libc.so
+         b643f8f4  00000000
+         b643f8f8  00000000
+         b643f8fc  11965f91
+         b643f900  b643f930  [stack:14627]
+         b643f904  b643f970  [stack:14627]
+         b643f908  b643f930  [stack:14627]
+         b643f90c  00000078
+         ........  ........
+    #04  b643f918  b66c3531  /system/lib/libc.so (__pthread_start(void*))
+         b643f91c  b643f938  [stack:14627]
+         b643f920  b66c3531  /system/lib/libc.so (__pthread_start(void*))
+         b643f924  b669dc31  /system/lib/libc.so (__start_thread+8)
+    #05  b643f928  b643f978  [stack:14627]
+         b643f92c  00000000
+         b643f930  b6fceb34  /system/bin/linker
+         b643f934  ae98a930  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 0 (deleted)
+         b643f938  00003923
+         b643f93c  00003922
+         b643f940  00000000
+         b643f944  b6341000
+         b643f948  000fe930
+         b643f94c  00001000
+         b643f950  00000000
+         b643f954  00000000
+         b643f958  00000000
+         b643f95c  00000000
+         b643f960  b6fdb579  /system/bin/dex2oat
+         b643f964  b645f0a0  [anon:libc_malloc]
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 14626, tid: 14654, name: Compiler driver  >>> /system/bin/dex2oat <<<
+    r0 b6fce378  r1 00000080  r2 00000002  r3 00000000
+    r4 00000000  r5 0000000b  r6 00000080  r7 000000f0
+    r8 ae687b64  r9 00000000  sl ae687b68  fp ae88a980
+    ip ae687b40  sp ae687b30  lr b6fbec21  pc b6fbfbb8  cpsr 00070010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  000000000000393e  d5  ffffffff0000004b
+    d6  0000004e0000000c  d7  aaf49f90000000e0
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 0000000000000000  d17 0000000000000000
+    d18 6465746361746e6f  d19 6567677562656420
+    d20 7473726966206472  d21 6f6320746f6e203b
+    d22 676e69746361746e  d23 6567677562656420
+    d24 2000000010000000  d25 8000000040000000
+    d26 00000140000000a0  d27 0000010000000080
+    d28 2222000011110000  d29 8888000044440000
+    d30 0222000001110000  d31 0888000004440000
+    scr 20000011
+
+backtrace:
+    #00 pc 00010bb8  /system/bin/linker (__dl_syscall+28)
+    #01 pc 0000fc1d  /system/bin/linker (__dl__ZL33__pthread_mutex_lock_with_timeoutP24pthread_mutex_internal_tPK8timespeci+504)
+    #02 pc 0000fced  /system/bin/linker (__dl_pthread_mutex_lock+26)
+    #03 pc 000017d9  /system/bin/linker (__dl__ZL24debuggerd_signal_handleriP7siginfoPv+376)
+    #04 pc 00010b90  /system/bin/linker
+
+stack:
+         ae687af0  ae687b80  [stack:14654]
+         ae687af4  b6fba639  /system/bin/linker (__dl__Z11out_vformatI18BufferOutputStreamEvRT_PKcSt9__va_list+736)
+         ae687af8  00000078
+         ae687afc  00000000
+         ae687b00  00000000
+         ae687b04  00000000
+         ae687b08  ae687b18  [stack:14654]
+         ae687b0c  00000000
+         ae687b10  b6fca507  /system/bin/linker
+         ae687b14  b6fbfdc7  /system/bin/linker (__dl__ZN11ScopedTraceC2EPKc+18)
+         ae687b18  00000000
+         ae687b1c  00000000
+         ae687b20  b6fce378  /system/bin/linker
+         ae687b24  00000000
+         ae687b28  00000000
+         ae687b2c  00000000
+    #00  ae687b30  b6fce378  /system/bin/linker
+         ae687b34  00000002
+         ae687b38  00000000
+         ae687b3c  00000000
+    #01  ae687b40  00000000
+         ae687b44  00000000
+         ae687b48  0000000b
+         ae687b4c  00000080
+         ae687b50  00000000
+         ae687b54  00000000
+         ae687b58  b6fc6e8d  /system/bin/linker
+         ae687b5c  00000001
+         ae687b60  00000007
+         ae687b64  00027bf8
+         ae687b68  ae680002  /dev/ashmem/dalvik-indirect ref table (deleted)
+         ae687b6c  ae687bc4  [stack:14654]
+         ae687b70  ae88a3b0  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 1 (deleted)
+         ae687b74  00000001
+         ae687b78  b6fce378  /system/bin/linker
+         ae687b7c  0000393e
+         ........  ........
+    #02  ae687b98  b6fce378  /system/bin/linker
+         ae687b9c  00027718
+         ae687ba0  ae687c90  [stack:14654]
+         ae687ba4  b6fb07dd  /system/bin/linker (__dl__ZL24debuggerd_signal_handleriP7siginfoPv+380)
+    #03  ae687ba8  b6fc6dec  /system/bin/linker
+         ae687bac  ae687bd8  [stack:14654]
+         ae687bb0  ae687bf8  [stack:14654]
+         ae687bb4  0000393e
+         ae687bb8  ae687bc4  [stack:14654]
+         ae687bbc  00000000
+         ae687bc0  00000000
+         ae687bc4  706d6f43
+         ae687bc8  72656c69  /data/dalvik-cache/arm/system@framework@boot.oat
+         ae687bcc  69726420
+         ae687bd0  00726576
+         ae687bd4  00000000
+         ae687bd8  6f63202c
+         ae687bdc  32206564  /dev/ashmem/dalvik-main space (deleted)
+         ae687be0  1c000000  /dev/ashmem/dalvik-main space (deleted)
+         ae687be4  b6fbfb94  /system/bin/linker (__dl___restore_rt)
+         ........  ........
+    #04  ae687c90  00000007
+         ae687c94  00000000
+         ae687c98  00000002
+         ae687c9c  a9b43368  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         ae687ca0  00000000
+         ae687ca4  00000000
+         ae687ca8  00000000
+         ae687cac  00000000
+         ae687cb0  00000000
+         ae687cb4  00000000
+         ae687cb8  00000000
+         ae687cbc  00000000
+         ae687cc0  00000000
+         ae687cc4  00000000
+         ae687cc8  00000000
+         ae687ccc  00000000
+--- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+pid: 14626, tid: 14655, name: Compiler driver  >>> /system/bin/dex2oat <<<
+    r0 b6fce378  r1 00000080  r2 00000002  r3 00000000
+    r4 00000000  r5 0000000b  r6 00000080  r7 000000f0
+    r8 ae684b64  r9 00000000  sl ae684b68  fp ae78a980
+    ip ae684b40  sp ae684b30  lr b6fbec21  pc b6fbfbb8  cpsr 000f0010
+    d0  0000000000000000  d1  0000000000000000
+    d2  0000000000000000  d3  0000000000000000
+    d4  000000000000393f  d5  0000000000000000
+    d6  0000000000000000  d7  0000000000000000
+    d8  0000000000000000  d9  0000000000000000
+    d10 0000000000000000  d11 0000000000000000
+    d12 0000000000000000  d13 0000000000000000
+    d14 0000000000000000  d15 0000000000000000
+    d16 0000000000000000  d17 0000000000000000
+    d18 6465746361746e6f  d19 6567677562656420
+    d20 7473726966206472  d21 6f6320746f6e203b
+    d22 676e69746361746e  d23 6567677562656420
+    d24 0000000000001000  d25 0000000000000000
+    d26 0000000000001001  d27 0000000000000000
+    d28 0000000000000010  d29 0000000000000000
+    d30 0000000000000001  d31 4000000000000000
+    scr 80000011
+
+backtrace:
+    #00 pc 00010bb8  /system/bin/linker (__dl_syscall+28)
+    #01 pc 0000fc1d  /system/bin/linker (__dl__ZL33__pthread_mutex_lock_with_timeoutP24pthread_mutex_internal_tPK8timespeci+504)
+    #02 pc 0000fced  /system/bin/linker (__dl_pthread_mutex_lock+26)
+    #03 pc 000017d9  /system/bin/linker (__dl__ZL24debuggerd_signal_handleriP7siginfoPv+376)
+    #04 pc 00010b90  /system/bin/linker
+
+stack:
+         ae684af0  ae684b80  [stack:14655]
+         ae684af4  b6fba639  /system/bin/linker (__dl__Z11out_vformatI18BufferOutputStreamEvRT_PKcSt9__va_list+736)
+         ae684af8  00000078
+         ae684afc  00000000
+         ae684b00  00000000
+         ae684b04  00000000
+         ae684b08  ae684b18  [stack:14655]
+         ae684b0c  00000000
+         ae684b10  b6fca507  /system/bin/linker
+         ae684b14  b6fbfdc7  /system/bin/linker (__dl__ZN11ScopedTraceC2EPKc+18)
+         ae684b18  00000000
+         ae684b1c  00000000
+         ae684b20  b6fce378  /system/bin/linker
+         ae684b24  00000000
+         ae684b28  00000000
+         ae684b2c  00000000
+    #00  ae684b30  b6fce378  /system/bin/linker
+         ae684b34  00000002
+         ae684b38  00000000
+         ae684b3c  00000000
+    #01  ae684b40  00000000
+         ae684b44  00000000
+         ae684b48  0000000b
+         ae684b4c  00000080
+         ae684b50  00000000
+         ae684b54  00000000
+         ae684b58  b6fc6e8d  /system/bin/linker
+         ae684b5c  00000001
+         ae684b60  00000007
+         ae684b64  00024bf8
+         ae684b68  ae680002  /dev/ashmem/dalvik-indirect ref table (deleted)
+         ae684b6c  ae684bc4  [stack:14655]
+         ae684b70  ae78a4e8  /dev/ashmem/dalvik-Compiler driver thread pool worker thread 2 (deleted)
+         ae684b74  00000001
+         ae684b78  b6fce378  /system/bin/linker
+         ae684b7c  0000393f
+         ........  ........
+    #02  ae684b98  b6fce378  /system/bin/linker
+         ae684b9c  00024718
+         ae684ba0  ae684c90  [stack:14655]
+         ae684ba4  b6fb07dd  /system/bin/linker (__dl__ZL24debuggerd_signal_handleriP7siginfoPv+380)
+    #03  ae684ba8  b6fc6dec  /system/bin/linker
+         ae684bac  ae684bd8  [stack:14655]
+         ae684bb0  ae684bf8  [stack:14655]
+         ae684bb4  0000393f
+         ae684bb8  ae684bc4  [stack:14655]
+         ae684bbc  00000000
+         ae684bc0  00000000
+         ae684bc4  706d6f43
+         ae684bc8  72656c69  /data/dalvik-cache/arm/system@framework@boot.oat
+         ae684bcc  69726420
+         ae684bd0  00726576
+         ae684bd4  00000000
+         ae684bd8  6f63202c
+         ae684bdc  32206564  /dev/ashmem/dalvik-main space (deleted)
+         ae684be0  1c000000  /dev/ashmem/dalvik-main space (deleted)
+         ae684be4  b6fbfb94  /system/bin/linker (__dl___restore_rt)
+         ........  ........
+    #04  ae684c90  00000007
+         ae684c94  00000000
+         ae684c98  00000002
+         ae684c9c  a9b43310  /data/app/vmdl1287051459.tmp/oat/arm/base.odex.swap (deleted)
+         ae684ca0  00000000
+         ae684ca4  00000000
+         ae684ca8  00000000
+         ae684cac  00000000
+         ae684cb0  00000000
+         ae684cb4  00000000
+         ae684cb8  00000000
+         ae684cbc  00000000
+         ae684cc0  00000000
+         ae684cc4  00000000
+         ae684cc8  00000000
+         ae684ccc  00000000
+--------- log main
+04-02 01:27:25.130 14626 14626 I dex2oat : Starting dex2oat.
+04-02 01:27:28.620 14626 14626 I dex2oat : Large app, accepted running with swap.
+04-02 01:27:28.943 14626 14655 W dex2oat : Before Android 4.1, method void com.tencent.mobileqq.activity.fling.ContentWrapView.ensureTransformationInfo() would have incorrectly overridden the package-private method in android.view.View
+04-02 01:27:37.813 14626 14626 W dex2oat : Verification of void com.tencent.mobileqq.service.message.MessageProtoCodec.a(com.tencent.mobileqq.app.MessageHandler, java.util.List, msf.msgcomm.msg_comm$Msg, boolean, boolean, com.tencent.mobileqq.troop.data.MessageInfo) took 294.186ms
+04-02 01:27:41.267 14626 14626 W dex2oat : No verified method for method calling String.<init>: java.lang.String android.text.SpannableStringBuilder.toString()
+04-02 01:27:44.227 14626 14655 W dex2oat : Compilation of void com.tencent.mobileqq.activity.specialcare.QvipSpecialCareManager.a(java.lang.String, com.tencent.mobileqq.app.QQAppInterface) took 2.713s
+04-02 01:27:44.227 14626 14654 W dex2oat : Compilation of void com.tencent.mobileqq.activity.specialcare.QQSpecialFriendSettingActivity.doOnDestroy() took 2.705s
+04-02 01:27:44.229 14626 14653 W dex2oat : Compilation of void com.tencent.mobileqq.activity.specialcare.QvipSpecialSoundActivity.a(java.lang.String, int) took 2.706s
+04-02 01:27:44.251 14626 14626 W dex2oat : Compilation of void com.tencent.mobileqq.activity.shortvideo.ShortVideoPlayActivity.doOnStart() took 2.712s
+04-02 01:27:45.149 14626 14626 W dex2oat : Compilation of void com.tencent.mobileqq.app.message.SubAccountMessageProcessor.b(com.tencent.qphone.base.remote.ToServiceMsg, com.tencent.qphone.base.remote.FromServiceMsg, java.lang.Object) took 111.068ms
+04-02 01:27:45.188 14626 14655 W dex2oat : Compilation of com.tencent.mobileqq.data.MessageRecord com.tencent.mobileqq.app.message.OnLinePushMessageProcessor.b(OnlinePushPack.MsgInfo, long) took 154.084ms
+04-02 01:27:45.349 14626 14655 W dex2oat : Compilation of void com.tencent.mobileqq.app.message.OnLinePushMessageProcessor.a(byte[]) took 125.037ms
+04-02 01:27:46.618 14626 14626 W dex2oat : Compilation of boolean com.tencent.mobileqq.msf.core.a.a.T() took 904.716ms
+04-02 01:27:46.618 14626 14655 W dex2oat : Compilation of void com.tencent.mobileqq.msf.core.a.d.o() took 902.103ms
+04-02 01:27:46.622 14626 14653 W dex2oat : Compilation of void com.tencent.mobileqq.msf.core.aa.a(com.tencent.mobileqq.msf.core.aa$a, boolean, boolean) took 900.427ms
+04-02 01:27:46.624 14626 14654 W dex2oat : Compilation of void com.tencent.mobileqq.msf.core.a.a() took 909.654ms
+04-02 01:27:47.017 14626 14655 W dex2oat : No verified method for method calling String.<init>: java.lang.String org.apache.http.util.CharArrayBuffer.toString()
+04-02 01:27:47.623 14626 14655 W dex2oat : Compilation of int com.tencent.mobileqq.msf.sdk.n.b(com.tencent.qphone.base.remote.ToServiceMsg) took 295.462ms
+04-02 01:27:47.623 14626 14626 W dex2oat : Compilation of void com.tencent.mobileqq.msf.sdk.n$b.run() took 282.413ms
+04-02 01:27:47.625 14626 14653 W dex2oat : Compilation of void com.tencent.mobileqq.msf.sdk.k.a(java.io.ObjectOutputStream) took 278.530ms
+04-02 01:27:47.632 14626 14654 W dex2oat : Compilation of int com.tencent.mobileqq.msf.sdk.utils.MonitorSocketInputStream.read(byte[], int, int) took 262.318ms
+04-02 01:27:47.978 14626 14626 I dex2oat : Skipping compilation of boolean com.tencent.mobileqq.pluginsdk.PluginBaseInfoHelper$Base64Helper$c.a(byte[], int, int, boolean): it contains a non natural loop
+04-02 01:27:48.305 14626 14626 I libc    : Another thread contacted debuggerd first; not contacting debuggerd.
+04-02 01:27:48.305 14626 14655 I libc    : Another thread contacted debuggerd first; not contacting debuggerd.
+04-02 01:27:48.306 14626 14654 I libc    : Another thread contacted debuggerd first; not contacting debuggerd.
+
+Tombstone written to: /data/tombstones/tombstone_04

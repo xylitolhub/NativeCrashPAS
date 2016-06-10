@@ -1,0 +1,476 @@
+#!/usr/bin/env python
+
+import cmd
+import os
+import sys
+
+import core
+import tool
+from core import *
+
+TCORE = None
+CTHREAD = None
+SYMBOLS_SET = False
+OATDUMP_SET = False
+OAT_PARSED = False
+
+def PrintBlock(block):
+  for line in TCORE.linesOfBlock(block):
+    print line,
+
+
+def IsInvalidRegName(regName, checkNone):
+  regNameList = TombCore.registerNames[tool.ARCH].split("|")
+  if not regName:
+    if checkNone:
+      print "Need argument for register name!"
+      return True
+    else:
+      return False
+  elif not regName in regNameList:
+    print regName + " is not register of " + tool.ARCH
+    return True
+  else:
+    return False
+
+def IsReadyForUnwind(frame):
+  global SYMBOLS_SET
+  if not SYMBOLS_SET:
+    print "You didn't set symbols before doing this. It will search symbols in current directory!"
+  if not OAT_PARSED and TCORE.oatAddrLibDict:
+    print "You can execute parseoat command to see more information about oat file."
+  if frame:
+    try:
+      frameNum = int(frame)
+    except ValueError:
+      print "Not a number!"
+      return False
+  return True
+
+class DiagnosticShell(cmd.Cmd):
+  def __init__(self):
+    cmd.Cmd.__init__(self)
+    self.prompt = "(ncdsh) "
+
+  def do_EOF(self, args):
+    return self.do_exit(args)
+
+  def do_exit(self, args):
+    print "Quiting...\n\n"
+    sys.exit(0)
+
+  def do_help(self, args):
+    msg = """
+    All commands:
+
+      tomb          [<tombstone file>]
+                    Load tombstone file.
+
+      symbols       [<symbols directory>]
+                    Set path to symbols directory.
+
+      symbols_tgz   [<symbols tgz file>]
+                    Unpack symbols tgz file to output directory, and set it symbols directory.
+
+      bt
+                    Show origin backtrace text of current thread.
+
+      stack
+                    Show origin stack data of current thread.
+
+      regs          [<register name>]
+                    Show value of register name of current thread.
+                    Show all value of registers if there is no register name.
+
+      device
+                    Show device information.
+
+      threads
+                    Show all threads.
+
+      cthread       [<thread id>]
+                    Switch thread to current thread
+
+      signal
+                    Show signal information include fault address.
+
+      maps
+                    Show maps.
+
+      logs
+                    Show logs in tombstone.
+
+      memnear       [<register name>]
+                    Show memory around register.
+                    Code around segment is included.
+
+      x             [<address>]
+                    Show content of address.
+
+      xx            [<address>]
+                    Show all information about address.
+
+      search        [<value>]
+                    Search value in all accessible address.
+
+      string        [<value>]
+                    Translate value's every byte to ascii char.
+
+      disasmr       [<register name>]
+                    Disassemble code around register.
+
+      disasmf       [<frame number>]
+                    Disassemble code around frame of backtrace.
+
+      sc            [<frame number>]
+                    Show source code of backtrace.
+                    It can follow by the frame number.
+
+      btx           [<frame number>]
+                    Show backtrace unwinded, include source code and asm code.
+                    It can follow by the frame number.
+                    This need set symbols directory.
+                    If you want to see address information of oat file, need set oat.
+
+      oatdump_device
+                    Will decode oat file use files from device connected.
+                    Be sure that the correct device happend native crash is connected.
+
+      oatdump_host  [<path of oatdump on host device>] [<path of oatfile dir>]
+                    In general, oatdump tool is at <repo-root>/out/host/linux-x86/bin/
+                    And you should specify directory contain oat files that you pull or extract from package.
+
+      parseoat
+                    Parse oatfiles, then you will see detailed information of oat file in backtrace.
+
+      shell         [<cmd>]
+                    Execute shell command.
+    """
+
+    print msg
+
+
+  def do_shell(self, args):
+    os.system(args)
+
+  def complete_shell(self, text, line, begidx, endidx):
+    pass
+    # path complete
+    # if text:
+    #   unCompBaseName = os.path.basename(text)
+    #   dirName = os.path.dirname(text)
+    #   if not dirName:
+    #     dirName = "."
+    #   if os.path.exists(dirName):
+    #     for baseName in os.listdir(dirName):
+    #       if baseName.startswith(unCompBaseName):
+    #         print baseName[len(unCompBaseName):]
+    #         return baseName
+
+  def do_tomb(self, tombFilePath):
+    global TCORE, CTHREAD, DETAIL
+    if tombFilePath and os.path.exists(tombFilePath):
+      f = open(tombFilePath, "r")
+      lines = f.readlines()
+      f.close()
+      MkdirSafely(tool.OUT_DIR)
+      core.DETAIL = True
+      core.SHELL_PRINT = True
+      TCORE = TombCore(lines)
+      CTHREAD = TCORE.threadInfoList[0]
+      print "Load tombstone successfully!"
+    else:
+      print tombFilePath
+      print "Please choose correct tombstone file!"
+
+  def do_bt(self, ignored):
+    PrintBlock(CTHREAD.blocks.backtraceBlock)
+
+  def do_stack(self, ignored):
+    PrintBlock(CTHREAD.blocks.stackBlock)
+
+  def do_regs(self, regName):
+    if IsInvalidRegName(regName, False):
+      return
+
+    if regName:
+      print regName + ": " + hex(CTHREAD.regDict[regName])
+    else:
+      regNameList = TombCore.registerNames[tool.ARCH].split("|")
+      for regName in regNameList:
+        print regName + ": " + hex(CTHREAD.regDict[regName])
+
+  def do_device(self, ignored):
+    print " DEVICE:".ljust(40) + TCORE.brand + " " + TCORE.device
+    print " BUILD NUMBER:".ljust(40) + TCORE.buildNumber + " " + TCORE.variant + " " + TCORE.key
+    print " ANDROID VERSION:".ljust(40) + TCORE.andVersion
+
+  def do_threads(self, ignored):
+    print "process: " + TCORE.threadInfoList[0].pid.ljust(20) + TCORE.threadInfoList[0].pname
+    print "threads:"
+    for threadInfo in TCORE.threadInfoList:
+      if CTHREAD == threadInfo:
+        prefix = "* "
+      else:
+        prefix = "  "
+      print prefix + threadInfo.tid.ljust(30) + threadInfo.tname
+
+  def do_signal(self, ignored):
+    print " PROCESS:".ljust(40) + TCORE.threadInfoList[0].pname
+    print " PID:".ljust(40) + TCORE.threadInfoList[0].pid
+    print
+    print " CRASH THREAD:".ljust(40) + TCORE.threadInfoList[0].tname
+    print " TID:".ljust(40) + TCORE.threadInfoList[0].tid
+    print " FAULT ADDR:".ljust(40) + TCORE.faultAddr
+    print
+    print " SIGNAL:".ljust(40) + TCORE.signame + " (" + TCORE.signum + ")"
+    print " SIGCODE:".ljust(40) + TCORE.sigcodeName + " (" + TCORE.sigcode + ")"
+
+  def do_maps(self, ignored):
+    for mapItem in TCORE.mapItemList:
+      print TCORE.lineFromMapItem(mapItem)
+
+  def do_logs(self, ignored):
+    TCORE.reportLogs()
+
+  def do_xx(self, address):
+    try:
+      addressInt = int(address, 16)
+      if addressInt in TCORE.memDict:
+        value = TCORE.getValueForAddrAndByteLen(addressInt)
+        print address + " value: " + hex(value)
+      else:
+        print "Can't be access to address " + address
+      locationScopeList = TCORE.locationsOfAddr(addressInt)
+      if locationScopeList:
+        print address + " address scope:"
+        lineMaxCount = 3
+        indent = "  "
+        line = indent
+        for locationScope in locationScopeList:
+          if not lineMaxCount:
+            print line
+            line = indent
+            lineMaxCount = 3
+          lineMaxCount = lineMaxCount - 1
+          line = line + locationScope.ljust(32)
+        if line != indent:
+          print line
+      else:
+        print "No scope around address."
+      addrList = TCORE.findAddrsForValue(addressInt)
+      if addrList:
+        print "where store this value: "
+        for addr in addrList:
+          print "  " + hex(addr)
+    except ValueError:
+      print "Invalid address!\n"
+      self.do_help(None)
+
+  def do_cthread(self, switchTid):
+    global CTHREAD
+    for threadInfo in TCORE.threadInfoList:
+      if switchTid == threadInfo.tid:
+        CTHREAD = threadInfo
+        print "Switch current thread to " + threadInfo.tname + " (" + threadInfo.tid + ")"
+        return
+    print "This tid is not exist: " + switchTid
+
+  def do_memnear(self, regName):
+    if regName:
+      if IsInvalidRegName(regName, False):
+        return
+      print regName + ": " + hex(CTHREAD.regDict[regName])
+      block = BlockFromCodeAroundOrMemNear(CTHREAD, regName)
+      if block:
+        PrintBlock(block)
+      else:
+        print "Can't be access to memory area near " + regName
+    else:
+      print "You should specify register name!"
+      avaliableRegNames = []
+      for (regNameMN, ignored) in CTHREAD.blocks.memoryNearBlockDict.items():
+        avaliableRegNames.append(regNameMN)
+      for (regNameCA, ignored) in CTHREAD.blocks.codeAroundBlockDict.items():
+        avaliableRegNames.append(regNameCA)
+      if avaliableRegNames:
+        print "These are registers you can look for:"
+        for arN in avaliableRegNames:
+          print "  " + arN
+      else:
+        print "There is not any memory around register of current thread!"
+
+  def do_x(self, address):
+    addressInt = int(address, 16)
+    if addressInt in TCORE.memDict:
+      value = TCORE.getValueForAddrAndByteLen(addressInt)
+      print address + ": " + hex(value)
+    else:
+      print "Can't be access to address " + address
+
+
+  def do_search(self, expectValueStr):
+    found = False
+    try:
+      expectValue = int(expectValueStr, 16)
+    except ValueError:
+      print str(expectValueStr) + " is not a valid value!"
+      return
+    expectValue = int(expectValueStr, 16)
+    addrList = TCORE.findAddrsForValue(expectValue)
+    if addrList:
+      print "where store this value: "
+      for addr in addrList:
+        print "  " + hex(addr)
+    else:
+      print expectValueStr + " is not found!"
+
+  def do_string(self, hexStr):
+    byteHexList = re.findall("[0-9a-fA-F]{2}", hexStr)
+    for byteHex in byteHexList:
+      print chr(int(byteHex, 16)),
+
+  def do_disasmr(self, regName):
+    if IsInvalidRegName(regName, True):
+      return
+    lines = TCORE.linesOfBlock(BlockFromCodeAroundOrMemNear(CTHREAD, regName))
+    if lines:
+      codeAroundFileName = tool.CODE_AROUND_DIR + CTHREAD.tid + "-" + regName + "-around"
+      if not os.path.exists(codeAroundFileName):
+        codeAroundFile = open(tool.CODE_AROUND_DIR + "tempData", "wb")
+        codeAroundFile.write(bytearray(BytesFromLines(lines)[1]))
+        codeAroundFile.close()
+        codeAroundFileName = codeAroundFile.name
+      instList = tool.CallObjdumpForSetWithDataFile(codeAroundFileName, tool.IsThumb(CTHREAD.regDict[regName]))
+      if regName in CTHREAD.codeAroundFileDict:
+        codeAroundStartAddr = CTHREAD.codeAroundFileDict[regName][0]
+      else:
+        codeAroundStartAddr = 0
+      if instList:
+        commonPrefix = " " + len(regName) * " " + "   "
+        regValueStriped = tool.StripPC(CTHREAD.regDict[regName])
+        print "code around " + regName + ":"
+        for (offset, inst) in instList:
+          offsetHexInt = int(offset, 16)
+          absoluteAddrHexInt = codeAroundStartAddr + offsetHexInt
+          if regValueStriped == absoluteAddrHexInt:
+            prefix = " " + regName + "=> "
+          else:
+            prefix = commonPrefix
+          print prefix + hex(absoluteAddrHexInt) + ":" + inst
+      else:
+        print "Can't be access to memory around value of " + regName
+    else:
+      print "Can't be access to memory around value of " + regName
+
+
+  def do_symbols(self, symbolsDir):
+    global SYMBOLS_SET
+    if os.path.exists(symbolsDir):
+      tool.SYMBOLS_DIR = symbolsDir
+      SYMBOLS_SET = True
+    else:
+      print "Path do not exist!"
+
+  def do_symbols_tgz(self, symbolsTgzFile):
+    global SYMBOLS_SET
+    if os.path.exists(symbolsTgzFile):
+      UnpackSymbolsTgz(symbolsTgzFile)
+      SYMBOLS_SET = True
+    else:
+      print "Path do not exist!"
+
+  def do_disasmf(self, frame):
+    if not IsReadyForUnwind(frame):
+      return
+    core.BTX_NEED_SC = False
+    core.BTX_NEED_ASM = True
+    if frame:
+      frameNum = int(frame)
+      for btFrame in CTHREAD.btFrameList:
+        if frameNum == int(btFrame[0]):
+          TCORE.reportBtFrame(btFrame)
+          return
+      print "Frame number is out of range!"
+    else:
+      for btFrame in CTHREAD.btFrameList:
+        TCORE.reportBtFrame(btFrame)
+
+  def do_sc(self, frame):
+    if not IsReadyForUnwind(frame):
+      return
+    core.BTX_NEED_SC = True
+    core.BTX_NEED_ASM = False
+    if frame:
+      frameNum = int(frame)
+      for btFrame in CTHREAD.btFrameList:
+        if frameNum == int(btFrame[0]):
+          TCORE.reportBtFrame(btFrame)
+          return
+      print "Frame number is out of range!"
+    else:
+      for btFrame in CTHREAD.btFrameList:
+        TCORE.reportBtFrame(btFrame)
+
+  def do_btx(self, frame):
+    if not IsReadyForUnwind(frame):
+      return
+    core.BTX_NEED_SC = True
+    core.BTX_NEED_ASM = True
+    if frame:
+      frameNum = int(frame)
+      for btFrame in CTHREAD.btFrameList:
+        if frameNum == int(btFrame[0]):
+          TCORE.reportBtFrame(btFrame)
+          return
+      print "Frame number is out of range!"
+    else:
+      for btFrame in CTHREAD.btFrameList:
+        TCORE.reportBtFrame(btFrame)
+
+  def do_oatdump_device(self, ignored):
+    global OATDUMP_SET
+    tool.OATDUMP_FROM_DEVICE = True
+    OATDUMP_SET = True
+
+  def do_oatdump_host(self, args):
+    global OATDUMP_SET
+    arg = args.split()
+    oatdumpTool = arg[0]
+    oatfileDir = arg[1]
+    if os.path.exists(oatdumpTool) and os.path.basename(oatdumpTool) == "oatdump":
+      tool.SetOatDumpTool(oatdumpTool)
+    else:
+      print "Invalid path of oatdump tool!"
+      return
+
+    if os.path.exists(oatfileDir):
+      tool.SetOatFileDir(oatfileDir)
+    else:
+      print "Invalid path of oat file directory!"
+      return
+    OATDUMP_SET = True
+
+  def do_parseoat(self, ignored):
+    global OAT_PARSED
+    if OATDUMP_SET:
+      TCORE.parseOatAddrs()
+      OAT_PARSED = True
+    else:
+      print "You should execute oatdump_device or oatdump_host first!"
+
+  def precmd(self, line):
+    if line:
+      command = line.split()[0]
+      if hasattr(self, "do_" + command) and not TCORE and not command in ["help", "tomb", "shell", "exit", "EOF"]:
+        print "Please load tombstone before execute this command!"
+        return "help"
+    return cmd.Cmd.precmd(self, line)
+
+  def postcmd(self, stopIgnored, lineIgnored):
+    print
+    print
+
+if __name__ =="__main__":
+    ncdShell = DiagnosticShell()
+    ncdShell.cmdloop("Welcome to use Native Crash Diagnostic Shell!\n\n")
